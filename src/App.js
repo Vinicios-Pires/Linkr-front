@@ -1,18 +1,19 @@
-import styled from "styled-components";
-
-const Header = styled.header`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  background: blue;
-  color: white;
-`;
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import SignUp from "./pages/auth/SignUp";
+import { UserProvider } from "./contexts/UserContext";
 
 function App() {
   return (
-    <div className="App">
-      <Header>Hello World</Header>
-    </div>
+    <UserProvider>
+      <div className="App">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={"Hello World"} />
+            <Route path="/sign-up" element={<SignUp />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </UserProvider>
   );
 }
 
