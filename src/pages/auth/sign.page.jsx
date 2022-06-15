@@ -1,9 +1,18 @@
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Input } from "../../components/form/FormComponents";
+import { UserContext } from "../../contexts/user.context";
+import { FormBanner, FormWrapper, Form } from "../../styles/form.style";
 
 export default function SignForm({ isSignUp }) {
+  const navigate = useRef(useNavigate());
   const [formInput, setFormInput] = useState({});
+  const { userToken, logUserIn } = useContext(UserContext);
+
+  useEffect(() => {
+    if (userToken) navigate.current("/");
+  }, [userToken]);
 
   const handleInput = (e) => {
     const infoInput = e.currentTarget;
@@ -23,9 +32,7 @@ export default function SignForm({ isSignUp }) {
     return formIsValid;
   };
 
-  const alertFormErrors = (formErrors) => {
-    window.alert(formErrors.map((error) => `${error}`));
-  };
+  const alertFormErrors = (formErrors) => window.alert(formErrors.map((e) => e));
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,16 +40,20 @@ export default function SignForm({ isSignUp }) {
     if (validateFormInput()) {
       axios
         .post(`http://localhost:5000/${isSignUp ? "sign-up" : "sign-in"}`, formInput)
-        .then((res) => console.log(res))
-        .catch((err) => console.log(err));
+        .then(({ data }) => logUserIn(data.token))
+        .catch(({ response }) => alertFormErrors([response.data]));
     }
   };
 
   return (
-    <main>
-      <h1>linkr</h1>
-      <h4>save, share and discover the best links on the web</h4>
-      <form>
+    <FormWrapper>
+      <FormBanner>
+        <div>
+          <h1>linkr</h1>
+          <h4>save, share and discover the best links on the web</h4>
+        </div>
+      </FormBanner>
+      <Form>
         <Input
           type="text"
           placeholder="email"
@@ -51,7 +62,7 @@ export default function SignForm({ isSignUp }) {
           required={true}
         />
         <Input
-          type="text"
+          type="password"
           placeholder="password"
           onChange={handleInput}
           name="password"
@@ -75,8 +86,11 @@ export default function SignForm({ isSignUp }) {
             />
           </>
         )}
-      </form>
-      <button onClick={handleSubmit}>Submit</button>
-    </main>
+        <button onClick={handleSubmit}>{isSignUp ? "Sign Up" : "Login"}</button>
+        <Link to={isSignUp ? "/" : "/sign-up"}>
+          {isSignUp ? "Switch back to login" : "First Time? Create an account!"}
+        </Link>
+      </Form>
+    </FormWrapper>
   );
 }
