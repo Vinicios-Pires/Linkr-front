@@ -6,8 +6,8 @@ import { MenuProvider } from "./contexts/menu.context";
 import { ThemeProvider } from "styled-components";
 import ResetCss from "./styles/reset.css.js";
 import { theme } from "./styles/theme";
-
-import HomePage from "./pages/home.page.jsx";
+import Posts from "./pages/posts";
+import HomePage from "./pages/home";
 import SignUp from "./pages/auth/SignUp";
 
 function App() {
@@ -20,6 +20,7 @@ function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/sign-up" element={<SignUp />} />
+              <Route path="/posts" element={<Posts/>}/>
             </Routes>
           </BrowserRouter>
         </MenuProvider>
