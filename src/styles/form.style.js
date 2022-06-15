@@ -93,6 +93,7 @@ export const Form = styled.form`
   button {
     width: ${inputWidth};
     height: ${inputHeight};
+    cursor: pointer;
 
     font-family: ${({ theme }) => theme.fonts.logoFont};
     font-size: ${({ theme }) => theme.fontSize.sm};
