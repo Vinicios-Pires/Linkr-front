@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import SignForm from "./pages/auth/SignForm";
-import { UserProvider } from "./contexts/UserContext";
+import SignForm from "./pages/auth/sign.page";
+import { UserProvider } from "./contexts/user.context";
 import { MenuProvider } from "./contexts/menu.context";
 
 import { ThemeProvider } from "styled-components";
