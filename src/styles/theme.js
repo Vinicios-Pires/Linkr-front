@@ -24,4 +24,18 @@ export const theme = {
     laptop: "769px",
     desktop: "1279px",
   },
+  borderRadius: {
+    sm: "6px",
+  },
+  fontSize: {
+    xs: "1rem",
+    sm: "1.5rem",
+    md: "2rem",
+    ml: "3rem",
+    lg: "4rem",
+    xl: "6rem",
+  },
+  shadow: {
+    gray: "0px 4px 4px 0px #00000040",
+  },
 };
