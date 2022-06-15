@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+import SignForm from "./pages/auth/SignForm";
 import { UserProvider } from "./contexts/UserContext";
 import { MenuProvider } from "./contexts/menu.context";
 
@@ -8,7 +9,6 @@ import ResetCss from "./styles/reset.css.js";
 import { theme } from "./styles/theme";
 
 import HomePage from "./pages/home.page.jsx";
-import SignUp from "./pages/auth/SignUp";
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
             <ResetCss />
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/sign-up" element={<SignUp />} />
+              <Route path="/sign-up" element={<SignForm isSignUp={true} />} />
             </Routes>
           </BrowserRouter>
         </MenuProvider>
