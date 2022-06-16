@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useContext, useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Input } from "../../components/form/FormComponents";
+import { Input } from "../../components/Input";
 import { UserContext } from "../../contexts/user.context";
 import { FormBanner, FormWrapper, Form } from "../../styles/form.style";
 
