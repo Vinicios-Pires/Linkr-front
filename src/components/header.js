@@ -3,6 +3,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { Link } from "react-router-dom";
 
 import * as S from "../styles/global.style.js";
+import SearchBar from "../components/SearchBar.jsx";
 
 import { MenuContext } from "../contexts/menu.context";
 import { UserContext } from "../contexts/user.context";
@@ -20,6 +21,7 @@ export default function Header() {
       <Link to="/">
         <h1>linkr</h1>
       </Link>
+      <SearchBar />
       <Navbar>
         <NavItem>
           <IoIosArrowDown onClick={handleMenuClick} />

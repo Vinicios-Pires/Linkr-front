@@ -8,6 +8,7 @@ export const theme = {
     mainBackground: "#333333",
     main: "#151515",
     secondary: "#FFFFFF",
+    lightGray: "#E7E7E7",
     text1: "#707070",
     text2: "#949494",
     inputBackground: "#EFEFEF",
@@ -26,6 +27,7 @@ export const theme = {
   },
   borderRadius: {
     sm: "6px",
+    md: "10px",
   },
   fontSize: {
     xs: "1rem",
