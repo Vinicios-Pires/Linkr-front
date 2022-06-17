@@ -2,20 +2,20 @@ import React, { useContext } from "react"
 import { Link } from "react-router-dom"
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io"
 
-import * as S from "../styles/global.style.js"
+import * as S from "../styles/global.style.js";
+import SearchBar from "../components/SearchBar.jsx";
 
-import { MenuContext } from "../contexts/menu.context.jsx"
+import { MenuContext } from "../contexts/menu.context";
+import { UserContext } from "../contexts/user.context";
 
-import profilePic from "../assets/default-avatar.jpg"
+import profilePic from "../assets/default-avatar.jpg";
 
 
 export default function Header() {
-  const { menuIsOpen, setMenuIsOpen } = useContext(MenuContext)
-  console.log(S)
+  const { menuIsOpen, setMenuIsOpen } = useContext(MenuContext);
+  const { logUserOut } = useContext(UserContext);
 
-  function handleMenuClick() {
-    setMenuIsOpen(!menuIsOpen)
-  }
+  const handleMenuClick = () => setMenuIsOpen(!menuIsOpen);
 
   function Navbar(props) {
     const { menuIsOpen } = useContext(MenuContext)
@@ -53,12 +53,13 @@ export default function Header() {
       <Link to="/">
         <h1>linkr</h1>
       </Link>
+      <SearchBar />
       <Navbar onClick={handleMenuClick}>
         <NavItem>
           <LogoutArrow />
           <NavItemHidden>
             <DropLogout>
-              <span onClick={() => {}}>Logout</span>
+              <span onClick={logUserOut}>Logout</span>
             </DropLogout>
           </NavItemHidden>
         </NavItem>
