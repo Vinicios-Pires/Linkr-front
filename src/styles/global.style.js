@@ -51,7 +51,7 @@ export const Header = styled.header`
       right: 0;
       height: 100vw;
       width: 100vw;
-      z-index: -3;
+      z-index: 2;
     }
     ul {
       height: 100%;
@@ -60,7 +60,7 @@ export const Header = styled.header`
       align-items: center;
       gap: 20px;
       list-style: none;
-      z-index: 2;
+      z-index: 3;
       li {
         height: 100%;
         height: 100%;
@@ -68,6 +68,7 @@ export const Header = styled.header`
         justify-content: space-between;
         align-items: center;
         transition: filter 300ms;
+        z-index: 4;
 
         svg {
           font-size: 22px;
