@@ -1,0 +1,366 @@
+﻿2022-06-15 14:19:08.242   Log opened. (Time zone: UTC-03:00)
+2022-06-15 14:19:08.242   Setup version: Inno Setup version 6.0.4 (u)
+2022-06-15 14:19:08.242   Original Setup EXE: \\wsl$\Ubuntu\home\xpepper\backend\PROJETÃO LINKR\projeto17-linkr_front-end\Linkr-front\src\assets\fsense_x86_x64.exe
+2022-06-15 14:19:08.242   Setup command line: /SL5="$2E076A,3445606,776704,\\wsl$\Ubuntu\home\xpepper\backend\PROJETÃO LINKR\projeto17-linkr_front-end\Linkr-front\src\assets\fsense_x86_x64.exe" /SPAWNWND=$9074A /NOTIFYWND=$C063C 
+2022-06-15 14:19:08.242   Compatibility mode: Yes (Installer)
+2022-06-15 14:19:08.243   Windows version: 10.0.19043  (NT platform: Yes)
+2022-06-15 14:19:08.243   64-bit Windows: Yes
+2022-06-15 14:19:08.243   Processor architecture: x64
+2022-06-15 14:19:08.243   User privileges: Administrative
+2022-06-15 14:19:08.245   Administrative install mode: Yes
+2022-06-15 14:19:08.245   Install mode root key: HKEY_LOCAL_MACHINE
+2022-06-15 14:19:08.245   64-bit install mode: Yes
+2022-06-15 14:19:09.836   Created temporary directory: C:\Users\XPEPPER\AppData\Local\Temp\is-M0V94.tmp
+2022-06-15 14:19:09.839   not VerySilent
+2022-06-15 14:19:16.420   Sending a request.
+2022-06-15 14:19:16.428   Verify if proxy is configured.
+2022-06-15 14:19:16.428   No proxy use...
+2022-06-15 14:19:17.134   Request fail - account not found [info@vitoriaregiacursos.com.br]]
+2022-06-15 14:19:17.134   Message box (OK):
+                          O e-mail informado não foi encontrado em nossa base. Por favor, verifique se ele está correto
+2022-06-15 14:19:17.153   User chose OK.
+2022-06-15 14:19:21.743   Sending a request.
+2022-06-15 14:19:21.744   Verify if proxy is configured.
+2022-06-15 14:19:21.744   No proxy use...
+2022-06-15 14:19:21.908   Request success
+2022-06-15 14:19:24.563   Found 48 files to register with RestartManager.
+2022-06-15 14:19:24.563   Calling RestartManager's RmGetList.
+2022-06-15 14:19:24.571   RmGetList finished successfully.
+2022-06-15 14:19:24.571   RestartManager found no applications using one of our files.
+2022-06-15 14:19:24.589   CurStep=ssInstall
+2022-06-15 14:19:24.589   Starting the installation process.
+2022-06-15 14:19:24.592   Creating directory: C:\fSense
+2022-06-15 14:19:24.593   Directory for uninstall files: C:\fSense
+2022-06-15 14:19:24.593   Creating new uninstall log: C:\fSense\unins000.dat
+2022-06-15 14:19:24.595   -- File entry --
+2022-06-15 14:19:24.596   Dest filename: C:\fSense\unins000.exe
+2022-06-15 14:19:24.596   Non-default bitness: 32-bit
+2022-06-15 14:19:24.597   Time stamp of our file: 2022-06-15 14:19:07.945
+2022-06-15 14:19:24.597   Installing the file.
+2022-06-15 14:19:24.607   Successfully installed the file.
+2022-06-15 14:19:24.607   -- File entry --
+2022-06-15 14:19:24.607   Dest filename: C:\fSense\default\Castle.Core.dll
+2022-06-15 14:19:24.608   Time stamp of our file: 2021-11-17 17:59:52.000
+2022-06-15 14:19:24.608   Installing the file.
+2022-06-15 14:19:24.608   Creating directory: C:\fSense\default
+2022-06-15 14:19:24.626   Successfully installed the file.
+2022-06-15 14:19:24.626   -- File entry --
+2022-06-15 14:19:24.627   Dest filename: C:\fSense\default\Castle.Windsor.dll
+2022-06-15 14:19:24.627   Time stamp of our file: 2021-11-17 17:59:54.000
+2022-06-15 14:19:24.627   Installing the file.
+2022-06-15 14:19:24.640   Successfully installed the file.
+2022-06-15 14:19:24.640   -- File entry --
+2022-06-15 14:19:24.641   Dest filename: C:\fSense\default\DeltaCompressionDotNet.dll
+2022-06-15 14:19:24.641   Time stamp of our file: 2021-11-17 17:59:56.000
+2022-06-15 14:19:24.641   Installing the file.
+2022-06-15 14:19:24.643   Successfully installed the file.
+2022-06-15 14:19:24.643   -- File entry --
+2022-06-15 14:19:24.643   Dest filename: C:\fSense\default\DeltaCompressionDotNet.MsDelta.dll
+2022-06-15 14:19:24.644   Time stamp of our file: 2021-11-17 17:59:58.000
+2022-06-15 14:19:24.644   Installing the file.
+2022-06-15 14:19:24.646   Successfully installed the file.
+2022-06-15 14:19:24.646   -- File entry --
+2022-06-15 14:19:24.647   Dest filename: C:\fSense\default\DeltaCompressionDotNet.PatchApi.dll
+2022-06-15 14:19:24.647   Time stamp of our file: 2021-11-17 18:00:00.000
+2022-06-15 14:19:24.647   Installing the file.
+2022-06-15 14:19:24.648   Successfully installed the file.
+2022-06-15 14:19:24.648   -- File entry --
+2022-06-15 14:19:24.649   Dest filename: C:\fSense\default\fSenseConfig.dll
+2022-06-15 14:19:24.649   Time stamp of our file: 2021-11-17 18:00:04.000
+2022-06-15 14:19:24.649   Installing the file.
+2022-06-15 14:19:24.650   Successfully installed the file.
+2022-06-15 14:19:24.651   -- File entry --
+2022-06-15 14:19:24.651   Dest filename: C:\fSense\default\fSenseCor.dll
+2022-06-15 14:19:24.651   Time stamp of our file: 2021-11-17 18:00:06.000
+2022-06-15 14:19:24.651   Installing the file.
+2022-06-15 14:19:24.655   Successfully installed the file.
+2022-06-15 14:19:24.655   -- File entry --
+2022-06-15 14:19:24.656   Dest filename: C:\fSense\default\Gma.System.MouseKeyHook.dll
+2022-06-15 14:19:24.656   Time stamp of our file: 2021-11-17 18:00:08.000
+2022-06-15 14:19:24.656   Installing the file.
+2022-06-15 14:19:24.659   Successfully installed the file.
+2022-06-15 14:19:24.659   -- File entry --
+2022-06-15 14:19:24.659   Dest filename: C:\fSense\default\ICSharpCode.SharpZipLib.dll
+2022-06-15 14:19:24.659   Time stamp of our file: 2021-11-17 18:00:10.000
+2022-06-15 14:19:24.659   Installing the file.
+2022-06-15 14:19:24.667   Successfully installed the file.
+2022-06-15 14:19:24.667   -- File entry --
+2022-06-15 14:19:24.668   Dest filename: C:\fSense\default\INIFileParser.dll
+2022-06-15 14:19:24.668   Time stamp of our file: 2021-11-17 18:00:12.000
+2022-06-15 14:19:24.668   Installing the file.
+2022-06-15 14:19:24.670   Successfully installed the file.
+2022-06-15 14:19:24.670   -- File entry --
+2022-06-15 14:19:24.671   Dest filename: C:\fSense\default\Interop.SHDocVw.dll
+2022-06-15 14:19:24.671   Time stamp of our file: 2021-11-17 18:00:14.000
+2022-06-15 14:19:24.671   Installing the file.
+2022-06-15 14:19:24.676   Successfully installed the file.
+2022-06-15 14:19:24.676   -- File entry --
+2022-06-15 14:19:24.677   Dest filename: C:\fSense\default\interop.UIAutomationCore.dll
+2022-06-15 14:19:24.677   Time stamp of our file: 2021-11-17 18:00:16.000
+2022-06-15 14:19:24.677   Installing the file.
+2022-06-15 14:19:24.679   Successfully installed the file.
+2022-06-15 14:19:24.679   -- File entry --
+2022-06-15 14:19:24.680   Dest filename: C:\fSense\default\log4net.dll
+2022-06-15 14:19:24.680   Time stamp of our file: 2021-11-17 18:00:18.000
+2022-06-15 14:19:24.680   Installing the file.
+2022-06-15 14:19:24.689   Successfully installed the file.
+2022-06-15 14:19:24.689   -- File entry --
+2022-06-15 14:19:24.690   Dest filename: C:\fSense\default\Microsoft.Threading.Tasks.dll
+2022-06-15 14:19:24.690   Time stamp of our file: 2021-11-17 18:00:20.000
+2022-06-15 14:19:24.690   Installing the file.
+2022-06-15 14:19:24.692   Successfully installed the file.
+2022-06-15 14:19:24.692   -- File entry --
+2022-06-15 14:19:24.692   Dest filename: C:\fSense\default\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+2022-06-15 14:19:24.692   Time stamp of our file: 2021-11-17 18:00:22.000
+2022-06-15 14:19:24.692   Installing the file.
+2022-06-15 14:19:24.694   Successfully installed the file.
+2022-06-15 14:19:24.694   -- File entry --
+2022-06-15 14:19:24.695   Dest filename: C:\fSense\default\Microsoft.Threading.Tasks.Extensions.dll
+2022-06-15 14:19:24.695   Time stamp of our file: 2021-11-17 18:00:24.000
+2022-06-15 14:19:24.695   Installing the file.
+2022-06-15 14:19:24.696   Successfully installed the file.
+2022-06-15 14:19:24.697   -- File entry --
+2022-06-15 14:19:24.697   Dest filename: C:\fSense\default\Microsoft.Web.XmlTransform.dll
+2022-06-15 14:19:24.697   Time stamp of our file: 2021-11-17 18:00:26.000
+2022-06-15 14:19:24.697   Installing the file.
+2022-06-15 14:19:24.701   Successfully installed the file.
+2022-06-15 14:19:24.702   -- File entry --
+2022-06-15 14:19:24.702   Dest filename: C:\fSense\default\Mono.Cecil.dll
+2022-06-15 14:19:24.702   Time stamp of our file: 2021-11-17 18:00:28.000
+2022-06-15 14:19:24.702   Installing the file.
+2022-06-15 14:19:24.713   Successfully installed the file.
+2022-06-15 14:19:24.713   -- File entry --
+2022-06-15 14:19:24.714   Dest filename: C:\fSense\default\Mono.Cecil.Mdb.dll
+2022-06-15 14:19:24.714   Time stamp of our file: 2021-11-17 18:00:30.000
+2022-06-15 14:19:24.714   Installing the file.
+2022-06-15 14:19:24.716   Successfully installed the file.
+2022-06-15 14:19:24.717   -- File entry --
+2022-06-15 14:19:24.717   Dest filename: C:\fSense\default\Mono.Cecil.Pdb.dll
+2022-06-15 14:19:24.718   Time stamp of our file: 2021-11-17 18:00:32.000
+2022-06-15 14:19:24.718   Installing the file.
+2022-06-15 14:19:24.722   Successfully installed the file.
+2022-06-15 14:19:24.723   -- File entry --
+2022-06-15 14:19:24.724   Dest filename: C:\fSense\default\Mono.Cecil.Rocks.dll
+2022-06-15 14:19:24.724   Time stamp of our file: 2021-11-17 18:00:34.000
+2022-06-15 14:19:24.724   Installing the file.
+2022-06-15 14:19:24.726   Successfully installed the file.
+2022-06-15 14:19:24.726   -- File entry --
+2022-06-15 14:19:24.726   Dest filename: C:\fSense\default\NDde.dll
+2022-06-15 14:19:24.727   Time stamp of our file: 2021-11-17 18:00:34.000
+2022-06-15 14:19:24.727   Installing the file.
+2022-06-15 14:19:24.730   Successfully installed the file.
+2022-06-15 14:19:24.731   -- File entry --
+2022-06-15 14:19:24.731   Dest filename: C:\fSense\default\Newtonsoft.Json.dll
+2022-06-15 14:19:24.731   Time stamp of our file: 2021-11-17 18:00:36.000
+2022-06-15 14:19:24.731   Installing the file.
+2022-06-15 14:19:24.749   Successfully installed the file.
+2022-06-15 14:19:24.749   -- File entry --
+2022-06-15 14:19:24.750   Dest filename: C:\fSense\default\ServiceUpdater.dll
+2022-06-15 14:19:24.750   Time stamp of our file: 2021-11-17 18:00:40.000
+2022-06-15 14:19:24.750   Installing the file.
+2022-06-15 14:19:24.751   Successfully installed the file.
+2022-06-15 14:19:24.752   -- File entry --
+2022-06-15 14:19:24.752   Dest filename: C:\fSense\default\System.IO.dll
+2022-06-15 14:19:24.752   Time stamp of our file: 2021-11-17 18:00:44.000
+2022-06-15 14:19:24.752   Installing the file.
+2022-06-15 14:19:24.754   Successfully installed the file.
+2022-06-15 14:19:24.754   -- File entry --
+2022-06-15 14:19:24.754   Dest filename: C:\fSense\default\System.Runtime.dll
+2022-06-15 14:19:24.755   Time stamp of our file: 2021-11-17 18:00:46.000
+2022-06-15 14:19:24.755   Installing the file.
+2022-06-15 14:19:24.756   Successfully installed the file.
+2022-06-15 14:19:24.756   -- File entry --
+2022-06-15 14:19:24.757   Dest filename: C:\fSense\default\System.Threading.Tasks.dll
+2022-06-15 14:19:24.757   Time stamp of our file: 2021-11-17 18:00:48.000
+2022-06-15 14:19:24.757   Installing the file.
+2022-06-15 14:19:24.758   Successfully installed the file.
+2022-06-15 14:19:24.759   -- File entry --
+2022-06-15 14:19:24.759   Dest filename: C:\fSense\default\UIAutomationClient.dll
+2022-06-15 14:19:24.759   Time stamp of our file: 2021-11-17 18:00:50.000
+2022-06-15 14:19:24.759   Installing the file.
+2022-06-15 14:19:24.761   Successfully installed the file.
+2022-06-15 14:19:24.761   -- File entry --
+2022-06-15 14:19:24.762   Dest filename: C:\fSense\default\UIAutomationTypes.dll
+2022-06-15 14:19:24.762   Time stamp of our file: 2021-11-17 18:00:50.000
+2022-06-15 14:19:24.762   Installing the file.
+2022-06-15 14:19:24.764   Successfully installed the file.
+2022-06-15 14:19:24.764   -- File entry --
+2022-06-15 14:19:24.765   Dest filename: C:\fSense\default\WinUtils.dll
+2022-06-15 14:19:24.765   Time stamp of our file: 2021-11-17 18:00:52.000
+2022-06-15 14:19:24.765   Installing the file.
+2022-06-15 14:19:24.771   Successfully installed the file.
+2022-06-15 14:19:24.772   -- File entry --
+2022-06-15 14:19:24.772   Dest filename: C:\fSense\default\WinUtils64.dll
+2022-06-15 14:19:24.772   Time stamp of our file: 2021-11-17 18:00:54.000
+2022-06-15 14:19:24.772   Installing the file.
+2022-06-15 14:19:24.779   Successfully installed the file.
+2022-06-15 14:19:24.779   -- File entry --
+2022-06-15 14:19:24.779   Dest filename: C:\fSense\default\FormDesktopTests.exe
+2022-06-15 14:19:24.780   Time stamp of our file: 2021-11-17 18:00:00.000
+2022-06-15 14:19:24.780   Installing the file.
+2022-06-15 14:19:24.782   Successfully installed the file.
+2022-06-15 14:19:24.783   -- File entry --
+2022-06-15 14:19:24.783   Dest filename: C:\fSense\default\fsense.exe
+2022-06-15 14:19:24.783   Time stamp of our file: 2021-11-17 18:00:02.000
+2022-06-15 14:19:24.783   Installing the file.
+2022-06-15 14:19:24.792   Successfully installed the file.
+2022-06-15 14:19:24.793   -- File entry --
+2022-06-15 14:19:24.793   Dest filename: C:\fSense\default\managerapp.exe
+2022-06-15 14:19:24.793   Time stamp of our file: 2021-11-17 18:00:18.000
+2022-06-15 14:19:24.793   Installing the file.
+2022-06-15 14:19:24.795   Successfully installed the file.
+2022-06-15 14:19:24.795   -- File entry --
+2022-06-15 14:19:24.796   Dest filename: C:\fSense\default\ScreenTest.exe
+2022-06-15 14:19:24.796   Time stamp of our file: 2021-11-17 18:00:38.000
+2022-06-15 14:19:24.796   Installing the file.
+2022-06-15 14:19:24.800   Successfully installed the file.
+2022-06-15 14:19:24.800   -- File entry --
+2022-06-15 14:19:24.801   Dest filename: C:\fSense\default\svchostw.exe
+2022-06-15 14:19:24.801   Time stamp of our file: 2021-11-17 18:00:42.000
+2022-06-15 14:19:24.801   Installing the file.
+2022-06-15 14:19:24.803   Successfully installed the file.
+2022-06-15 14:19:24.803   -- File entry --
+2022-06-15 14:19:24.803   Dest filename: C:\fSense\default\icon.ico
+2022-06-15 14:19:24.804   Time stamp of our file: 2020-06-29 12:04:00.000
+2022-06-15 14:19:24.804   Installing the file.
+2022-06-15 14:19:24.804   Successfully installed the file.
+2022-06-15 14:19:24.805   -- File entry --
+2022-06-15 14:19:24.805   Dest filename: C:\fSense\default\fsense.exe.manifest
+2022-06-15 14:19:24.806   Time stamp of our file: 2021-11-17 17:27:56.000
+2022-06-15 14:19:24.806   Installing the file.
+2022-06-15 14:19:24.807   Successfully installed the file.
+2022-06-15 14:19:24.807   -- File entry --
+2022-06-15 14:19:24.808   Dest filename: C:\fSense\default\update\fSenseConfig.dll
+2022-06-15 14:19:24.808   Time stamp of our file: 2021-11-17 18:00:56.000
+2022-06-15 14:19:24.808   Installing the file.
+2022-06-15 14:19:24.808   Creating directory: C:\fSense\default\update
+2022-06-15 14:19:24.809   Successfully installed the file.
+2022-06-15 14:19:24.810   -- File entry --
+2022-06-15 14:19:24.810   Dest filename: C:\fSense\default\update\fSenseCor.dll
+2022-06-15 14:19:24.810   Time stamp of our file: 2021-11-17 18:00:58.000
+2022-06-15 14:19:24.810   Installing the file.
+2022-06-15 14:19:24.812   Successfully installed the file.
+2022-06-15 14:19:24.812   -- File entry --
+2022-06-15 14:19:24.813   Dest filename: C:\fSense\default\update\ICSharpCode.SharpZipLib.dll
+2022-06-15 14:19:24.813   Time stamp of our file: 2021-11-17 18:01:02.000
+2022-06-15 14:19:24.813   Installing the file.
+2022-06-15 14:19:24.816   Successfully installed the file.
+2022-06-15 14:19:24.816   -- File entry --
+2022-06-15 14:19:24.817   Dest filename: C:\fSense\default\update\log4net.dll
+2022-06-15 14:19:24.817   Time stamp of our file: 2021-11-17 18:01:04.000
+2022-06-15 14:19:24.817   Installing the file.
+2022-06-15 14:19:24.820   Successfully installed the file.
+2022-06-15 14:19:24.820   -- File entry --
+2022-06-15 14:19:24.821   Dest filename: C:\fSense\default\update\Newtonsoft.Json.dll
+2022-06-15 14:19:24.821   Time stamp of our file: 2021-11-17 18:01:04.000
+2022-06-15 14:19:24.821   Installing the file.
+2022-06-15 14:19:24.825   Successfully installed the file.
+2022-06-15 14:19:24.825   -- File entry --
+2022-06-15 14:19:24.826   Dest filename: C:\fSense\default\update\fSenseUpdater.exe
+2022-06-15 14:19:24.826   Time stamp of our file: 2021-11-17 18:01:00.000
+2022-06-15 14:19:24.826   Installing the file.
+2022-06-15 14:19:24.828   Successfully installed the file.
+2022-06-15 14:19:24.828   -- File entry --
+2022-06-15 14:19:24.829   Dest filename: C:\fSense\icon.ico
+2022-06-15 14:19:24.830   Time stamp of our file: 2020-06-29 12:04:00.000
+2022-06-15 14:19:24.830   Installing the file.
+2022-06-15 14:19:24.834   Successfully installed the file.
+2022-06-15 14:19:24.834   -- File entry --
+2022-06-15 14:19:24.835   Dest filename: C:\fSense\fSenseCor.dll.config
+2022-06-15 14:19:24.835   Time stamp of our file: 2020-08-03 17:14:52.000
+2022-06-15 14:19:24.835   Installing the file.
+2022-06-15 14:19:24.836   Successfully installed the file.
+2022-06-15 14:19:24.836   -- File entry --
+2022-06-15 14:19:24.837   Dest filename: C:\fSense\fSenseUpdater.exe.config
+2022-06-15 14:19:24.837   Time stamp of our file: 2020-06-29 12:04:00.000
+2022-06-15 14:19:24.837   Installing the file.
+2022-06-15 14:19:24.838   Successfully installed the file.
+2022-06-15 14:19:24.838   -- File entry --
+2022-06-15 14:19:24.839   Dest filename: C:\fSense\fSenseConfig.dll
+2022-06-15 14:19:24.839   Time stamp of our file: 2021-11-17 18:01:08.000
+2022-06-15 14:19:24.839   Installing the file.
+2022-06-15 14:19:24.841   Successfully installed the file.
+2022-06-15 14:19:24.841   -- File entry --
+2022-06-15 14:19:24.841   Dest filename: C:\fSense\fSenseCor.dll
+2022-06-15 14:19:24.842   Time stamp of our file: 2021-11-17 18:01:10.000
+2022-06-15 14:19:24.842   Installing the file.
+2022-06-15 14:19:24.843   Successfully installed the file.
+2022-06-15 14:19:24.843   -- File entry --
+2022-06-15 14:19:24.845   Dest filename: C:\fSense\ICSharpCode.SharpZipLib.dll
+2022-06-15 14:19:24.845   Time stamp of our file: 2021-11-17 18:01:14.000
+2022-06-15 14:19:24.845   Installing the file.
+2022-06-15 14:19:24.847   Successfully installed the file.
+2022-06-15 14:19:24.848   -- File entry --
+2022-06-15 14:19:24.848   Dest filename: C:\fSense\log4net.dll
+2022-06-15 14:19:24.848   Time stamp of our file: 2021-11-17 18:01:14.000
+2022-06-15 14:19:24.848   Installing the file.
+2022-06-15 14:19:24.851   Successfully installed the file.
+2022-06-15 14:19:24.851   -- File entry --
+2022-06-15 14:19:24.852   Dest filename: C:\fSense\Newtonsoft.Json.dll
+2022-06-15 14:19:24.852   Time stamp of our file: 2021-11-17 18:01:16.000
+2022-06-15 14:19:24.852   Installing the file.
+2022-06-15 14:19:24.856   Successfully installed the file.
+2022-06-15 14:19:24.856   -- File entry --
+2022-06-15 14:19:24.857   Dest filename: C:\fSense\fSenseUpdater.exe
+2022-06-15 14:19:24.857   Time stamp of our file: 2021-11-17 18:01:12.000
+2022-06-15 14:19:24.857   Installing the file.
+2022-06-15 14:19:24.858   Successfully installed the file.
+2022-06-15 14:19:24.859   -- Registry entry --
+2022-06-15 14:19:24.859   Key: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run
+2022-06-15 14:19:24.859   Value name: fSense
+2022-06-15 14:19:24.859   Creating or opening the key.
+2022-06-15 14:19:24.859   Creating or setting the value.
+2022-06-15 14:19:24.860   Successfully created or set the value.
+2022-06-15 14:19:24.860   -- Registry entry --
+2022-06-15 14:19:24.860   Key: HKEY_LOCAL_MACHINE\Software\fsense\Settings
+2022-06-15 14:19:24.860   Value name: acc
+2022-06-15 14:19:24.860   Creating or opening the key.
+2022-06-15 14:19:24.860   Creating or setting the value.
+2022-06-15 14:19:24.860   Successfully created or set the value.
+2022-06-15 14:19:24.860   -- Registry entry --
+2022-06-15 14:19:24.860   Key: HKEY_LOCAL_MACHINE\Software\fsense\Settings
+2022-06-15 14:19:24.860   Value name: silent
+2022-06-15 14:19:24.860   Creating or opening the key.
+2022-06-15 14:19:24.860   Creating or setting the value.
+2022-06-15 14:19:24.860   Successfully created or set the value.
+2022-06-15 14:19:24.860   -- Registry entry --
+2022-06-15 14:19:24.860   Key: HKEY_LOCAL_MACHINE\Software\fsense\Settings
+2022-06-15 14:19:24.860   Value name: lang
+2022-06-15 14:19:24.860   Creating or opening the key.
+2022-06-15 14:19:24.860   Creating or setting the value.
+2022-06-15 14:19:24.860   Successfully created or set the value.
+2022-06-15 14:19:24.860   -- Registry entry --
+2022-06-15 14:19:24.860   Key: HKEY_LOCAL_MACHINE\Software\fsense\Settings
+2022-06-15 14:19:24.860   Value name: InstallPath
+2022-06-15 14:19:24.860   Creating or opening the key.
+2022-06-15 14:19:24.860   Creating or setting the value.
+2022-06-15 14:19:24.860   Successfully created or set the value.
+2022-06-15 14:19:24.861   Saving uninstall information.
+2022-06-15 14:19:24.861   Creating new uninstall key: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\{49260197-D742-459E-A8FE-078937519CBA}}_is1
+2022-06-15 14:19:24.861   Writing uninstall key values.
+2022-06-15 14:19:24.862   Detected previous non administrative install? No
+2022-06-15 14:19:24.862   Detected previous administrative 32-bit install? No
+2022-06-15 14:19:24.866   Installation process succeeded.
+2022-06-15 14:19:24.874   -- Run entry --
+2022-06-15 14:19:24.874   Run as: Current user
+2022-06-15 14:19:24.874   Type: Exec
+2022-06-15 14:19:24.874   Filename: C:\WINDOWS\system32\taskkill.exe
+2022-06-15 14:19:24.874   Parameters: /f /im fSenseUpdater.exe
+2022-06-15 14:19:25.075   Process exit code: 128
+2022-06-15 14:19:25.075   -- Run entry --
+2022-06-15 14:19:25.075   Run as: Current user
+2022-06-15 14:19:25.075   Type: Exec
+2022-06-15 14:19:25.075   Filename: C:\WINDOWS\system32\taskkill.exe
+2022-06-15 14:19:25.075   Parameters: /f /im fsense.exe /im svchostw.exe /im managerapp.exe
+2022-06-15 14:19:25.233   Process exit code: 128
+2022-06-15 14:19:25.233   hasParamNoStart=false
+2022-06-15 14:19:25.233   -- Run entry --
+2022-06-15 14:19:25.233   Run as: Original user
+2022-06-15 14:19:25.233   Type: Exec
+2022-06-15 14:19:25.233   Filename: C:\fSense\fSenseUpdater.exe
+2022-06-15 14:19:25.233   Parameters: -i
+2022-06-15 14:19:27.970   CurStep=ssPostInstall
+2022-06-15 14:19:28.235   Need to restart Windows? No
+2022-06-15 14:19:29.677   success
+2022-06-15 14:19:29.677   fSense successfully installed
+2022-06-15 14:19:29.690   Deinitializing Setup.
