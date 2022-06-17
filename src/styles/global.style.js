@@ -43,6 +43,16 @@ export const Header = styled.header`
     height: 100%;
     position: relative;
     padding-right: 20px;
+    padding-left: 20px;
+
+    ol {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100vw;
+      width: 100vw;
+      z-index: -3;
+    }
     ul {
       height: 100%;
       display: flex;
@@ -50,6 +60,7 @@ export const Header = styled.header`
       align-items: center;
       gap: 20px;
       list-style: none;
+      z-index: 2;
       li {
         height: 100%;
         height: 100%;

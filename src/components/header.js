@@ -18,18 +18,23 @@ export default function Header() {
   }
 
   function Navbar(props) {
-    return (
+    const { menuIsOpen } = useContext(MenuContext)
+
+    return <>{menuIsOpen ? 
       <nav onClick={handleMenuClick}>
+        <ol></ol>
         <ul>{props.children}</ul>
-      </nav>
-    )
+      </nav> : <nav onClick={handleMenuClick}>
+        <ul>{props.children}</ul>
+      </nav>}</>
+    
   }
   
   function NavItem(props) {
     return <li >{props.children}</li>
   }
 
-  function LogoutArrow(props) {
+  function LogoutArrow() {
     const { menuIsOpen } = useContext(MenuContext)
     return <>{!menuIsOpen ? <IoIosArrowDown/> : <IoIosArrowUp/>}</>
   }
@@ -50,8 +55,7 @@ export default function Header() {
       </Link>
       <Navbar onClick={handleMenuClick}>
         <NavItem>
-          <LogoutArrow>
-          </LogoutArrow>
+          <LogoutArrow />
           <NavItemHidden>
             <DropLogout>
               <span onClick={() => {}}>Logout</span>
