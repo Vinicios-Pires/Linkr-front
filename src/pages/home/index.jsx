@@ -3,7 +3,7 @@ import * as S from "../../styles/global.style";
 import { useContext } from "react";
 import { UserContext } from "../../contexts/user.context";
 
-import { Input } from "../../components/form/FormComponents";
+import { Input } from "../../components/Input.jsx";
 import { Form, FormWrapper } from "../../styles/form.style";
 
 import { TimelineHeader, Div } from "./style";
