@@ -24,34 +24,30 @@ export default function HomePage() {
     if (!userToken) navigate.current("/");
   }, [userToken]);
 
-  const config = {
-    headers: {
-      Authorization: `Bearer ${userToken}`,
-    },
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsAwaitingRequest(true);
     setDescription("");
     setUrl("");
 
-    const data = {
-      url: url,
-      description: description,
+    const data = { url, description };
+
+    const config = {
+      headers: {
+        Authorization: `Bearer ${userToken}`,
+      },
     };
-    const promise = axios.post("https://localhost:5000/timeline", data, config);
 
-    promise.then((response) => {
-      setIsAwaitingRequest(false);
-      console.log("Sucess to send post", response);
-    });
-
-    promise.catch((err) => {
-      setIsAwaitingRequest(false);
-      console.log(userToken);
-      alert("Houve um erro ao publicar seu link");
-    });
+    axios
+      .post("http://localhost:5000/timeline", data, config)
+      .then((response) => {
+        setIsAwaitingRequest(false);
+        console.log("Sucess to send post", response);
+      })
+      .catch(({ response }) => {
+        setIsAwaitingRequest(false);
+        alert(response.data || "Houve um erro ao publicar seu link");
+      });
   };
 
   return (
