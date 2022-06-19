@@ -2,11 +2,6 @@ import styled from "styled-components";
 import { DebounceInput } from "react-debounce-input";
 import { BsSearch } from "react-icons/bs";
 
-export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
 export const SearchBarWrapper = styled.div`
   position: relative;
   z-index: 2;

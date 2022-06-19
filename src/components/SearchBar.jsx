@@ -4,7 +4,6 @@ import {
   SearchBarWrapper,
   Input,
   SearchIcon,
-  Wrapper,
   ResultsContainer,
   UserResult,
   HideTransitionBlock,
@@ -15,7 +14,6 @@ export default function SearchBar() {
   const [usersData, setUsersData] = useState([]);
 
   const handleInput = (e) => setInputText(e.target.value);
-  console.log(usersData);
 
   useEffect(() => {
     if (inputText.length > 2) {
