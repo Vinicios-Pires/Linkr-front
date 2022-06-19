@@ -44,8 +44,8 @@ export default function SearchBar() {
         <ResultsContainer>
           {usersData.map((user, index) => (
             <UserResult key={user.username + index}>
-              <h5>{user.username}</h5>
               <img src={user.pictureUrl} alt="avatar" />
+              <h5>{user.username}</h5>
             </UserResult>
           ))}
         </ResultsContainer>

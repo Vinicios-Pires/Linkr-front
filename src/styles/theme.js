@@ -11,6 +11,7 @@ export const theme = {
     lightGray: "#E7E7E7",
     text1: "#707070",
     text2: "#949494",
+    text3: "#515151",
     inputBackground: "#EFEFEF",
     buttonBackground: "#1877F2",
     likeButton: "#AC0000",

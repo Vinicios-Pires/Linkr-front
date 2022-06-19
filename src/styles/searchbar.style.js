@@ -5,6 +5,7 @@ import { BsSearch } from "react-icons/bs";
 export const SearchBarWrapper = styled.div`
   position: relative;
   z-index: 2;
+  width: clamp(100px, 100%, 500px);
 `;
 
 export const Input = styled(DebounceInput)`
@@ -15,7 +16,7 @@ export const Input = styled(DebounceInput)`
   border-radius: ${({ theme }) => theme.borderRadius.md};
 
   height: calc(${({ theme }) => theme.spacing.headerHeight} - 45%);
-  width: clamp(100px, 500px, 600px);
+  width: clamp(100px, 100%, 500px);
   padding: 1rem;
 `;
 
@@ -58,13 +59,17 @@ export const ResultsContainer = styled.div`
 
 export const UserResult = styled.div`
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  color: ${({ theme }) => theme.colors.text3};
+  font-size: ${({ theme }) => theme.fontSize.sm};
 
   padding: 0 10px;
 
   img {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
   }
 `;
 
