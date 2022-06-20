@@ -8,9 +8,11 @@ export const theme = {
     mainBackground: "#333333",
     main: "#151515",
     secondary: "#FFFFFF",
+    lightGray: "#E7E7E7",
     text1: "#707070",
     text2: "#949494",
     postBackground: "#171717",
+    text3: "#515151",
     inputBackground: "#EFEFEF",
     buttonBackground: "#1877F2",
     likeButton: "#AC0000",
@@ -27,6 +29,7 @@ export const theme = {
   },
   borderRadius: {
     sm: "6px",
+    md: "10px",
   },
   fontSize: {
     xs: "1rem",
