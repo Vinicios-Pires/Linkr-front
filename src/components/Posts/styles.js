@@ -101,5 +101,7 @@ export const LinkWrapper = styled.div`
     aspect-ratio: 1;
     object-fit: cover;
     object-position: right top;
+    border-radius: 0 ${({ theme }) => theme.borderRadius.md}
+      ${({ theme }) => theme.borderRadius.md} 0;
   }
 `;
