@@ -1,17 +1,19 @@
 import axios from "axios";
 import { useContext, useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Input } from "../../components/form/FormComponents";
+import { Input } from "../../components/Input";
 import { UserContext } from "../../contexts/user.context";
 import { FormBanner, FormWrapper, Form } from "../../styles/form.style";
 
 export default function SignForm({ isSignUp }) {
   const navigate = useRef(useNavigate());
-  const [formInput, setFormInput] = useState({});
   const { userToken, logUserIn } = useContext(UserContext);
 
+  const [formInput, setFormInput] = useState({});
+  const [isAwaitingRequest, setIsAwaitingRequest] = useState(false);
+
   useEffect(() => {
-    if (userToken) navigate.current("/");
+    if (userToken) navigate.current("/timeline");
   }, [userToken]);
 
   const handleInput = (e) => {
@@ -37,11 +39,16 @@ export default function SignForm({ isSignUp }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (validateFormInput()) {
+    if (!isAwaitingRequest && validateFormInput()) {
+      setIsAwaitingRequest(true);
       axios
-        .post(`http://localhost:5000/${isSignUp ? "sign-up" : "sign-in"}`, formInput)
+        .post(
+          `${process.env.REACT_APP_API_URL}/${isSignUp ? "sign-up" : "sign-in"}`,
+          formInput,
+        )
         .then(({ data }) => logUserIn(data.token))
-        .catch(({ response }) => alertFormErrors([response.data]));
+        .catch(({ response }) => alertFormErrors([response.data]))
+        .finally(() => setIsAwaitingRequest(false));
     }
   };
 

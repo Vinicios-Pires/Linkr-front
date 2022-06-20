@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { theme } from "./theme";
 
 export const Body = styled.main`
   width: 100%;
@@ -44,6 +43,16 @@ export const Header = styled.header`
     height: 100%;
     position: relative;
     padding-right: 20px;
+    padding-left: 20px;
+
+    ol {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100vw;
+      width: 100vw;
+      z-index: 2;
+    }
     ul {
       height: 100%;
       display: flex;
@@ -51,6 +60,7 @@ export const Header = styled.header`
       align-items: center;
       gap: 20px;
       list-style: none;
+      z-index: 4;
       li {
         height: 100%;
         height: 100%;
@@ -58,6 +68,7 @@ export const Header = styled.header`
         justify-content: space-between;
         align-items: center;
         transition: filter 300ms;
+        z-index: 5;
 
         svg {
           font-size: 22px;

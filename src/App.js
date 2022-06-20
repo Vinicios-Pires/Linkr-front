@@ -19,9 +19,10 @@ function App() {
           <BrowserRouter>
             <ResetCss />
             <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/posts" element={<Posts />} />
+              <Route path="/" element={<SignForm isSignUp={false} />} />
               <Route path="/sign-up" element={<SignForm isSignUp={true} />} />
+              <Route path="/timeline" element={<HomePage />} />
+              <Route path="/posts" element={<Posts />} />
             </Routes>
           </BrowserRouter>
         </MenuProvider>
