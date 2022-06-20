@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Body = styled.main`
   width: 100%;
   margin: 0 auto;
+
   min-height: calc(100vh - ${({ theme }) => theme.spacing.headerHeight});
   margin-top: ${({ theme }) => theme.spacing.headerHeight};
 
@@ -124,12 +125,11 @@ export const DropdownMenu = styled.div`
   }
 `;
 
-export const Trending =  styled.div`
-  background-color: ${({theme}) => theme.colors.postBackground};
+export const Trending = styled.div`
+  background-color: ${({ theme }) => theme.colors.postBackground};
   height: 406px;
   width: 301px;
   left: 877px;
   top: 232px;
   border-radius: 16px;
-
-`
+`;
