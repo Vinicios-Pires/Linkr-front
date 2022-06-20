@@ -26,7 +26,7 @@ export default function SearchBar() {
   useEffect(() => {
     if (inputText.length > 2) {
       axios
-        .get(`http://localhost:5000/users`, {
+        .get(`${process.env.REACT_APP_API_URL}/users`, {
           params: {
             username: inputText,
           },

@@ -39,7 +39,7 @@ export default function HomePage() {
     };
 
     axios
-      .post("http://localhost:5000/timeline", data, config)
+      .post(`${process.env.REACT_APP_API_URL}/timeline`, data, config)
       .then((response) => {
         setIsAwaitingRequest(false);
         console.log("Sucess to send post", response);

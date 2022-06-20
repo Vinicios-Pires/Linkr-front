@@ -1,3 +1,4 @@
+import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 
 export const UserContext = createContext();
@@ -6,8 +7,20 @@ export function UserProvider({ children }) {
   const [userToken, setUserToken] = useState("");
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) setUserToken(token);
+    const token = localStorage.getItem("token")?.replaceAll('"', "");
+    if (token) {
+      const url = `${process.env.REACT_APP_API_URL}/validateToken`;
+      const config = {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
+
+      axios
+        .post(url, {}, config)
+        .then(() => setUserToken(token))
+        .catch(() => localStorage.removeItem("token"));
+    }
   }, []);
 
   const logUserIn = (token) => {
@@ -17,7 +30,7 @@ export function UserProvider({ children }) {
 
   const logUserOut = () => {
     localStorage.removeItem("token");
-    setUserToken({});
+    setUserToken("");
     window.location.reload();
   };
 
