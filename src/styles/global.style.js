@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "./theme";
 
 export const Body = styled.main`
   width: 100%;
@@ -123,3 +124,13 @@ export const DropdownMenu = styled.div`
     }
   }
 `;
+
+export const Trending =  styled.div`
+  background-color: ${({theme}) => theme.colors.postBackground};
+  height: 406px;
+  width: 301px;
+  left: 877px;
+  top: 232px;
+  border-radius: 16px;
+
+`
