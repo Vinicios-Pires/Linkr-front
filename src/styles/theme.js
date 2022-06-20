@@ -10,6 +10,7 @@ export const theme = {
     secondary: "#FFFFFF",
     text1: "#707070",
     text2: "#949494",
+    postBackground: "#171717",
     inputBackground: "#EFEFEF",
     buttonBackground: "#1877F2",
     likeButton: "#AC0000",
