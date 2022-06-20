@@ -42,7 +42,10 @@ export default function SignForm({ isSignUp }) {
     if (!isAwaitingRequest && validateFormInput()) {
       setIsAwaitingRequest(true);
       axios
-        .post(`http://localhost:5000/${isSignUp ? "sign-up" : "sign-in"}`, formInput)
+        .post(
+          `${process.env.REACT_APP_API_URL}/${isSignUp ? "sign-up" : "sign-in"}`,
+          formInput,
+        )
         .then(({ data }) => logUserIn(data.token))
         .catch(({ response }) => alertFormErrors([response.data]))
         .finally(() => setIsAwaitingRequest(false));
