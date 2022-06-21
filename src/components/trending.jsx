@@ -8,14 +8,16 @@ export default function Trending () {
 
     return (
         <S.TrendingBox>
-        <S.Title>trending</S.Title>
+        <S.Title>PXP</S.Title>
 
             {/* <S.Trends onClick={() => navigate()}> */}
-            <S.Trends># Hashtag</S.Trends>
-            <S.Trends># Hashtag</S.Trends>
-            <S.Trends># Hashtag</S.Trends>
-            <S.Trends># Hashtag</S.Trends>
-            <S.Trends># Hashtag</S.Trends>
+            <S.Trends># PIMPE</S.Trends>
+            <S.Trends># FELICAO</S.Trends>
+            <S.Trends># GI</S.Trends>
+            <S.Trends># WENDS</S.Trends>
+            <S.Trends># LUCÃO</S.Trends>
+            <S.Trends># JUAN</S.Trends>
+            <S.Trends># BODONES</S.Trends>
 
           {/* <S.ErrorLoadTrendsMessage>
             <p>There are no hashtags yet.</p>
