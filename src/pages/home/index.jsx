@@ -30,8 +30,19 @@ export default function HomePage() {
           <PostForm />
           <Posts />
         </S.Body>
-        <Trending/>
+        <S.TrendWrapper>
+          <Trending></Trending>
+        </S.TrendWrapper>
       </FormWrapper>
     </>
   );
 }
+
+export const TrendWrapper = styled.div`
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 301px;
+  @media (max-width: ${({ theme }) => theme.breakPoints.largeScreen}) {
+    display: none;
+  }
+`
