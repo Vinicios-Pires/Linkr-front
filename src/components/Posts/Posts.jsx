@@ -26,7 +26,7 @@ export default function Posts() {
       {posts.length > 0
         ? posts.map((post, index) => (
             <Post
-              key={post.url + index}
+              key={index} // post.url + index
               pictureUrl={post.pictureUrl}
               username={post.username}
               description={post.description}
