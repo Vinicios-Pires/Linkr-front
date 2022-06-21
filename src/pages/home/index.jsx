@@ -38,11 +38,3 @@ export default function HomePage() {
   );
 }
 
-export const TrendWrapper = styled.div`
-  flex-grow: 0;
-  flex-shrink: 0;
-  width: 301px;
-  @media (max-width: ${({ theme }) => theme.breakPoints.largeScreen}) {
-    display: none;
-  }
-`

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io"
 
 import * as S from "../styles/global.style.js";
-import SearchBar from "../components/SearchBar.jsx";
+import SearchBar from "./SearchBar.jsx";
 
 import { MenuContext } from "../contexts/menu.context";
 import { UserContext } from "../contexts/user.context";
