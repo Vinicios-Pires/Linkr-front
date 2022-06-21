@@ -187,6 +187,7 @@ export const Trends = styled.div`
 `;
 
 export const ErrorLoadTrendsMessage = styled.div`
+  padding-left: 10px;
   background: none;
   margin-top: 0;
   width: 90%;
