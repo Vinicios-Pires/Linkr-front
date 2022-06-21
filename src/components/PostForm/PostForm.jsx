@@ -1,9 +1,11 @@
 import { Input } from "../Input";
-import { Form } from "../../styles/form.style";
+import { Form, FormWrapper, ImgTitleWrapper} from "../../styles/form.style";
 import axios from "axios";
 import { useState } from "react";
 import { useContext } from "react";
 import { UserContext } from "../../contexts/user.context";
+
+import pictureUrl2 from "../../assets/default-avatar.jpg";
 
 export default function PostForm() {
   const { userToken } = useContext(UserContext);
@@ -39,7 +41,14 @@ export default function PostForm() {
   };
 
   return (
+    <FormWrapper>
+      <ImgTitleWrapper>
+    <img src={pictureUrl2} alt="avatar" />
+    <p>What are you sharing today?</p>
+    </ImgTitleWrapper>
+
     <Form onSubmit={handleSubmit}>
+
       <Input
         type="text"
         placeholder="http://..."
@@ -61,5 +70,6 @@ export default function PostForm() {
         {isAwaitingRequest ? "Publishing..." : "Publish"}
       </button>
     </Form>
+    </FormWrapper>
   );
 }

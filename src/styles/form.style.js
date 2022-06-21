@@ -1,16 +1,42 @@
 import styled from "styled-components";
+import theme from "./theme";
 
 export const FormWrapper = styled.main`
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
+  width: clamp(350px, 100%, 611px);
+  height: 209px;
+  color: ${({ theme }) => theme.colors.secondary};
+  background-color: ${({ theme }) => theme.colors.postBackground};
+
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  p{
+    font: ${({ theme }) => theme.fonts.mainFont};
+    font-size: ${({ theme }) => theme.fontSize.sm};
+    width: clamp(350px, 100%, 445px);
+    margin-left: 15px;
+    margin-top: -20px;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakPoints.laptop}) {
     flex-direction: column;
   }
 `;
+
+export const ImgTitleWrapper = styled.div`
+position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  top: 35px;
+  left: 20px;
+  `;
 
 export const FormBanner = styled.section`
   display: flex;
@@ -63,20 +89,34 @@ const inputHeight = "3rem";
 const inputWidth = "80%";
 
 export const Form = styled.form`
+
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  margin: auto auto;
-  width: clamp(400px, 100%, 600px);
+  margin: 25px 25px;
+  padding-left: 70px;
+  padding-right: 30px;
+  height: 142px;
+  width: clamp(350px, 100%, 600px);
 
   @media (max-width: ${({ theme }) => theme.breakPoints.laptop}) {
     heigth: 100vh;
   }
 
   input {
-    width: ${inputWidth};
-    height: ${inputHeight};
+    width: clamp(350px, 100%, 503px);
+
+    :first-child{
+      height: 30px;
+    }
+    :last-child{
+      height: 66px;
+    }
+
+    margin-right: 30px;
+    margin-left: 10px;
+
     padding: 1rem;
 
     font-family: ${({ theme }) => theme.fonts.logoFont};
@@ -91,8 +131,12 @@ export const Form = styled.form`
   }
 
   button {
-    width: ${inputWidth};
-    height: ${inputHeight};
+    position: relative;
+    right: -192px;
+    margin-right: 30px;
+
+    width: 112px;
+    height: 31px;
     cursor: pointer;
 
     font-family: ${({ theme }) => theme.fonts.logoFont};
