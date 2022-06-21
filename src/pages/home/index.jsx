@@ -5,6 +5,7 @@ import { UserContext } from "../../contexts/user.context";
 import Header from "../../components/header.js";
 import PostForm from "../../components/PostForm/PostForm";
 import Posts from "../../components/Posts/Posts";
+import Trending from "../../components/trending";
 
 import { FormWrapper } from "../../styles/form.style";
 import * as S from "../../styles/global.style";
@@ -24,11 +25,12 @@ export default function HomePage() {
       <FormWrapper>
         <S.Body>
           <Div>
-            <TimelineHeader>timeline 2</TimelineHeader>
+            <TimelineHeader>timeline</TimelineHeader>
           </Div>
           <PostForm />
           <Posts />
         </S.Body>
+        <Trending/>
       </FormWrapper>
     </>
   );
