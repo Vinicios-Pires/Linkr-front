@@ -5,7 +5,7 @@ import { theme } from "../styles/theme"
 export default function Trending () {
     return (
         <TrendingContainer>
-            <h2>trending</h2>
+            <h2>trending 2</h2>
             <TrendingTopics>
 
             </TrendingTopics>
