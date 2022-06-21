@@ -24,7 +24,7 @@ export default function HomePage() {
       <FormWrapper>
         <S.Body>
           <Div>
-            <TimelineHeader>timeline</TimelineHeader>
+            <TimelineHeader>timeline 2</TimelineHeader>
           </Div>
           <PostForm />
           <Posts />
