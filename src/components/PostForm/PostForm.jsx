@@ -1,5 +1,5 @@
 import { Input } from "../Input";
-import { Form, FormWrapper, ImgTitleWrapper} from "../../styles/form.style";
+import { Form, FormWrapper2, ImgTitleWrapper} from "../../styles/form.style";
 import axios from "axios";
 import { useState } from "react";
 import { useContext } from "react";

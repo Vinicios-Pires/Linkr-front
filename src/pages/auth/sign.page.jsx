@@ -3,7 +3,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Input } from "../../components/Input";
 import { UserContext } from "../../contexts/user.context";
-import { FormBanner, FormWrapper, Form } from "../../styles/form.style";
+import { FormBanner, FormWrapper, Form } from "./form.styles.jsx";
 
 export default function SignForm({ isSignUp }) {
   const navigate = useRef(useNavigate());
