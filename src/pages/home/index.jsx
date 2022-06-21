@@ -26,16 +26,16 @@ export default function HomePage() {
       {/* <FormWrapper> */}
         <S.Body>
         <S.ContentWrapper>
-        <S.MainContentWrapper>
+        <S.MainWrapper>
           <Div>
             <TimelineHeader>timeline</TimelineHeader>
           </Div>
           <PostForm />
           <Posts />
-          </S.MainContentWrapper>
-          <S.SecondaryContentWrapper>
+          </S.MainWrapper>
+          <S.TrendWrapper>
           <Trending></Trending>
-        </S.SecondaryContentWrapper>
+        </S.TrendWrapper>
         </S.ContentWrapper>
         </S.Body>
       {/* </FormWrapper> */}

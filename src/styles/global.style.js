@@ -130,11 +130,11 @@ export const ContentWrapper = styled.div`
   gap: 25px;
 `
 
-export const MainContentWrapper = styled.div`
+export const PostsWrapper = styled.div`
   flex-grow: 1;
   flex-shrink: 1;
 `
-export const SecondaryContentWrapper = styled.div`
+export const TrendWrapper = styled.div`
 display: flex;
   justify-content: start;
   gap: 0.5rem;
@@ -155,15 +155,6 @@ export const Trending = styled.div`
   left: 877px;
   top: 232px;
   border-radius: 16px;
-`;
-
-export const TrendWrapper = styled.div`
-  flex-grow: 0;
-  flex-shrink: 0;
-  width: 301px;
-  @media (max-width: ${({ theme }) => theme.breakPoints.laptop}) {
-    display: none;
-  }
 `;
 
 export const TrendingBox = styled.div`

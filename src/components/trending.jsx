@@ -2,7 +2,6 @@
 // import { useNavigate } from "react-router-dom";
 import * as S from "../styles/global.style"
 
-
 export default function Trending () {
 
     // const navigate = useRef(useNavigate());
