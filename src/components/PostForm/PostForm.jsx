@@ -41,7 +41,7 @@ export default function PostForm() {
   };
 
   return (
-    <FormWrapper>
+    <FormWrapper2>
       <ImgTitleWrapper>
     <img src={pictureUrl2} alt="avatar" />
     <p>What are you sharing today?</p>
@@ -70,6 +70,6 @@ export default function PostForm() {
         {isAwaitingRequest ? "Publishing..." : "Publish"}
       </button>
     </Form>
-    </FormWrapper>
+    </FormWrapper2>
   );
 }

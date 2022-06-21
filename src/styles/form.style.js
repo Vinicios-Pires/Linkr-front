@@ -1,7 +1,19 @@
 import styled from "styled-components";
 import theme from "./theme";
-
+// SIGN UP AND IN
 export const FormWrapper = styled.main`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  @media (max-width: ${({ theme }) => theme.breakPoints.laptop}) {
+    flex-direction: column;
+  }
+`;
+
+//POST POSTS
+export const FormWrapper2 = styled.main`
   display: flex;
   flex-direction: column;
   justify-content: center;
