@@ -133,3 +133,12 @@ export const Trending = styled.div`
   top: 232px;
   border-radius: 16px;
 `;
+
+export const TrendWrapper = styled.div`
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 301px;
+  @media (max-width: ${({ theme }) => theme.breakPoints.largeScreen}) {
+    display: none;
+  }
+`
