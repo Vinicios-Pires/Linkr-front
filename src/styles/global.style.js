@@ -1,18 +1,18 @@
 import styled from "styled-components";
 
 export const Body = styled.main`
+  /* display: flex; */
   width: 100%;
   margin: 0 auto;
-
   min-height: calc(100vh - ${({ theme }) => theme.spacing.headerHeight});
   margin-top: ${({ theme }) => theme.spacing.headerHeight};
+  transition: all 300ms ease;
 
   @media (min-width: ${({ theme }) => theme.breakPoints.laptop}) {
-    width: ${({ theme }) => theme.spacing.maxBodyWidth};
-    margin: 0 auto;
+    max-width: ${({ theme }) => theme.spacing.maxBodyWidth};
     margin-top: ${({ theme }) => theme.spacing.headerHeight};
   }
-`;
+`
 
 export const Header = styled.header`
   height: ${({ theme }) => theme.spacing.headerHeight};
@@ -125,6 +125,29 @@ export const DropdownMenu = styled.div`
   }
 `;
 
+export const ContentWrapper = styled.div`
+  display: flex;
+  gap: 25px;
+`
+
+export const MainContentWrapper = styled.div`
+  flex-grow: 1;
+  flex-shrink: 1;
+`
+export const SecondaryContentWrapper = styled.div`
+display: flex;
+  justify-content: start;
+  gap: 0.5rem;
+  margin: 185px 30px auto -55px;
+
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 301px;
+  @media (max-width: ${({ theme }) => theme.breakPoints.laptop}) {
+    display: none;
+  }
+`;
+
 export const Trending = styled.div`
   background-color: ${({ theme }) => theme.colors.postBackground};
   height: 406px;
@@ -138,7 +161,42 @@ export const TrendWrapper = styled.div`
   flex-grow: 0;
   flex-shrink: 0;
   width: 301px;
-  @media (max-width: ${({ theme }) => theme.breakPoints.largeScreen}) {
+  @media (max-width: ${({ theme }) => theme.breakPoints.laptop}) {
     display: none;
   }
-`
+`;
+
+export const TrendingBox = styled.div`
+
+  color: ${({ theme }) => theme.colors.secondary};
+  background-color: ${({ theme }) => theme.colors.main};
+  border-radius: 16px;
+  width: 100%;
+  height: auto;
+  font-weight: 700;
+  padding-bottom: 7px;
+`;
+
+export const Title = styled.div`
+  font-size: 27px;
+  line-height: 40px;
+  border-bottom: 1px solid #484848;
+  padding: 9px 0px 12px 16px;
+`;
+
+export const Trends = styled.div`
+  font-size: 17px;
+  margin: 10px 10px 0px 0px;
+  padding: 0px 0px 10px 16px;
+  letter-spacing: 0.05em;
+  :hover {
+    cursor: pointer;
+    filter: brightness(0.9);
+  }
+`;
+
+export const ErrorLoadTrendsMessage = styled.div`
+  background: none;
+  margin-top: 0;
+  width: 90%;
+`;
