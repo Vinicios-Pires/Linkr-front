@@ -138,7 +138,7 @@ export const TrendWrapper = styled.div`
 display: flex;
   justify-content: start;
   gap: 0.5rem;
-  margin: 185px 0px auto 25px;
+  margin: 185px 0px auto -15px;
 
   flex-grow: 0;
   flex-shrink: 0;
