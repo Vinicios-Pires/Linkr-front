@@ -1,5 +1,5 @@
 import { Input } from "../Input";
-import { Form, FormWrapper2, ImgTitleWrapper} from "../../styles/form.style";
+import { Form, FormWrapper2, ImgTitleWrapper } from "../../styles/form.style";
 import axios from "axios";
 import { useState } from "react";
 import { useContext } from "react";
@@ -15,7 +15,7 @@ export default function PostForm() {
   const [isAwaitingRequest, setIsAwaitingRequest] = useState(false);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     setIsAwaitingRequest(true);
     setDescription("");
     setUrl("");
@@ -35,6 +35,7 @@ export default function PostForm() {
         console.log("Sucess to send post", response);
       })
       .catch(({ response }) => {
+        e.preventDefault();
         setIsAwaitingRequest(false);
         alert(response.data || "Houve um erro ao publicar seu link");
       });
@@ -43,33 +44,32 @@ export default function PostForm() {
   return (
     <FormWrapper2>
       <ImgTitleWrapper>
-    <img src={pictureUrl2} alt="avatar" />
-    <p>What are you sharing today?</p>
-    </ImgTitleWrapper>
+        <img src={pictureUrl2} alt="avatar" />
+        <p>What are you sharing today?</p>
+      </ImgTitleWrapper>
 
-    <Form onSubmit={handleSubmit}>
-
-      <Input
-        type="text"
-        placeholder="http://..."
-        onChange={(e) => setUrl(e.target.value)}
-        value={url}
-        name="url"
-        disabled={isAwaitingRequest}
-        required
-      />
-      <Input
-        type="text"
-        placeholder="Awesome article about #javascript"
-        onChange={(e) => setDescription(e.target.value)}
-        value={description}
-        name="description"
-        disabled={isAwaitingRequest}
-      />
-      <button type="submit" disabled={isAwaitingRequest}>
-        {isAwaitingRequest ? "Publishing..." : "Publish"}
-      </button>
-    </Form>
+      <Form onSubmit={handleSubmit}>
+        <Input
+          type="text"
+          placeholder="http://..."
+          onChange={(e) => setUrl(e.target.value)}
+          value={url}
+          name="url"
+          disabled={isAwaitingRequest}
+          required
+        />
+        <Input
+          type="text"
+          placeholder="Awesome article about #javascript"
+          onChange={(e) => setDescription(e.target.value)}
+          value={description}
+          name="description"
+          disabled={isAwaitingRequest}
+        />
+        <button type="submit" disabled={isAwaitingRequest}>
+          {isAwaitingRequest ? "Publishing..." : "Publish"}
+        </button>
+      </Form>
     </FormWrapper2>
   );
 }
