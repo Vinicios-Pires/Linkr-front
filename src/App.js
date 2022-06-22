@@ -7,9 +7,9 @@ import { MenuProvider } from "./contexts/menu.context";
 import { ThemeProvider } from "styled-components";
 import ResetCss from "./styles/reset.css.js";
 import { theme } from "./styles/theme";
-import Posts from "./pages/posts";
-
+// import Posts from "./pages/posts";
 import HomePage from "./pages/home/index";
+import UserProfile from "./pages/userProfile/index";
 
 function App() {
   return (
@@ -22,7 +22,8 @@ function App() {
               <Route path="/" element={<SignForm isSignUp={false} />} />
               <Route path="/sign-up" element={<SignForm isSignUp={true} />} />
               <Route path="/timeline" element={<HomePage />} />
-              <Route path="/posts" element={<Posts />} />
+              {/* <Route path="/posts" element={<Posts />} /> */}
+              <Route path="/user/:id" element={<UserProfile />} />
             </Routes>
           </BrowserRouter>
         </MenuProvider>
