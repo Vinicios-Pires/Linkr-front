@@ -6,9 +6,11 @@ import { useContext } from "react";
 import { UserContext } from "../../contexts/user.context";
 
 import pictureUrl2 from "../../assets/default-avatar.jpg";
+import { PostWrapper } from "../Posts/styles";
 
 export default function PostForm() {
   const { userToken } = useContext(UserContext);
+
 
   const [url, setUrl] = useState("");
   const [description, setDescription] = useState("");
@@ -42,6 +44,7 @@ export default function PostForm() {
   };
 
   return (
+    // <PostWrapper>
     <FormWrapper2>
       <ImgTitleWrapper>
         <img src={pictureUrl2} alt="avatar" />
@@ -71,5 +74,6 @@ export default function PostForm() {
         </button>
       </Form>
     </FormWrapper2>
+    // </PostWrapper>
   );
 }

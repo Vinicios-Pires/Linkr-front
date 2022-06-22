@@ -9,6 +9,11 @@ export const FormWrapper2 = styled.main`
   height: 209px;
   color: ${({ theme }) => theme.colors.secondary};
   background-color: ${({ theme }) => theme.colors.postBackground};
+  background: #FFFFFF;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 16px;
+margin-left: 10px;
+
 
   img {
     width: 50px;
@@ -22,6 +27,7 @@ export const FormWrapper2 = styled.main`
     width: clamp(350px, 100%, 445px);
     margin-left: 15px;
     margin-top: -20px;
+    color: ${({ theme }) => theme.colors.text1};
   }
 
   @media (max-width: ${({ theme }) => theme.breakPoints.laptop}) {
@@ -99,7 +105,6 @@ export const Form = styled.form`
   padding-right: 30px;
   height: 142px;
   width: clamp(350px, 100%, 600px);
-
   @media (max-width: ${({ theme }) => theme.breakPoints.laptop}) {
     heigth: 100vh;
   }
@@ -121,6 +126,7 @@ export const Form = styled.form`
 
     font-family: ${({ theme }) => theme.fonts.logoFont};
     font-size: ${({ theme }) => theme.fontSize.sm};
+    font-weight: 300;
     border-radius: ${({ theme }) => theme.borderRadius.sm};
     border: none;
     background: ${({ theme }) => theme.colors.inputBackground};
@@ -130,10 +136,17 @@ export const Form = styled.form`
     }
   }
 
+  @media (max-width: 600px){
+    button{
+    margin-right: 30px;
+    }
+  }
+
   button {
     position: relative;
-    right: -192px;
-    margin-right: 30px;
+    right: -210px;
+    margin-right: 50px;
+
 
     width: 112px;
     height: 31px;
