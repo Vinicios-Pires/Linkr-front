@@ -1,15 +1,18 @@
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Post from "./Post";
-import { PostsWrapper } from "./styles";
+
+import Post from "../Posts/Post";
+import { PostsWrapper } from "../Posts/styles";
 
 export default function Posts() {
+  const { id } = useParams();
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/timeline`)
+      .get(`${process.env.REACT_APP_API_URL}/user/${id}`)
       .then(({ data }) => setPosts(data))
       .catch(() =>
         window.alert(
