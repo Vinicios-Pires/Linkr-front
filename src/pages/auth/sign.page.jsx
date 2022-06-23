@@ -39,8 +39,6 @@ export default function SignForm({ isSignUp }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(process.env.REACT_APP_API_URL);
-
     if (!isAwaitingRequest && validateFormInput()) {
       setIsAwaitingRequest(true);
       axios
@@ -48,7 +46,7 @@ export default function SignForm({ isSignUp }) {
           `${process.env.REACT_APP_API_URL}/${isSignUp ? "sign-up" : "sign-in"}`,
           formInput,
         )
-        .then(({ data }) => logUserIn(data.token))
+        .then(({ data }) => logUserIn(data))
         .catch(({ response }) => alertFormErrors([response.data]))
         .finally(() => setIsAwaitingRequest(false));
     }

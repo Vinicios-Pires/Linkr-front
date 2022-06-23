@@ -1,7 +1,50 @@
-import { PostHeader, PostWrapper } from "./styles";
+import { PostHeader, PostWrapper, LikesWrapper, BottomWrapper } from "./styles";
 import Link from "./Link";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import axios from "axios";
+import { useContext, useState } from "react";
+import { UserContext } from "../../contexts/user.context";
+import ReactTooltip from "react-tooltip";
 
-export default function Post({ pictureUrl, username, description, linkData }) {
+export default function Post({
+  pictureUrl,
+  username,
+  description,
+  linkData,
+  userHasLiked,
+  likes,
+  postId,
+}) {
+  const { userToken, userInfo } = useContext(UserContext);
+
+  const [isLiked, setIsLiked] = useState(userHasLiked);
+  const [numberOfLikes, setNumberOfLikes] = useState(likes.length);
+
+  const handleLike = () => {
+    const likeAction = userHasLiked ? "dislike" : "like";
+    const config = {
+      headers: {
+        Authorization: `Bearer ${userToken}`,
+      },
+    };
+    axios
+      .post(`${process.env.REACT_APP_API_URL}/posts/${postId}/${likeAction}`, {}, config)
+      .then(() => {
+        setNumberOfLikes(isLiked ? numberOfLikes - 1 : numberOfLikes + 1);
+        setIsLiked(!isLiked);
+      })
+      .catch(console.dir);
+  };
+
+  const likedBy = likes.filter((username) => username !== userInfo.username);
+  if (isLiked) likedBy.unshift("Você");
+
+  let likesMessage = "";
+  if (likedBy.length > 0) likesMessage = likedBy[0].toString();
+  if (likedBy.length > 1) likesMessage = likesMessage + `, ${likedBy[1]}`;
+  if (likedBy.length > 2)
+    likesMessage = likesMessage + `and other ${likes.length - 1} people`;
+
   return (
     <PostWrapper>
       <PostHeader>
@@ -11,7 +54,18 @@ export default function Post({ pictureUrl, username, description, linkData }) {
           <h3>{description}</h3>
         </div>
       </PostHeader>
-      <Link linkData={linkData} />
+      <BottomWrapper>
+        <LikesWrapper isLiked={isLiked}>
+          {isLiked ? (
+            <AiFillHeart onClick={handleLike} />
+          ) : (
+            <AiOutlineHeart onClick={handleLike} />
+          )}
+          <h3 data-tip={likesMessage}>{numberOfLikes} Likes</h3>
+          <ReactTooltip place="bottom" type="light" effect="solid" />
+        </LikesWrapper>
+        <Link linkData={linkData} />
+      </BottomWrapper>
     </PostWrapper>
   );
 }

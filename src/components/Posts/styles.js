@@ -6,8 +6,8 @@ export const PostsWrapper = styled.section`
   align-items: center;
   gap: 1rem;
   margin-top: 1rem;
-
   max-height: 60vh;
+  position: relative;
 `;
 
 export const PostWrapper = styled.article`
@@ -32,8 +32,8 @@ export const PostHeader = styled.div`
   align-self: start;
 
   img {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
   }
 
@@ -55,8 +55,7 @@ export const PostHeader = styled.div`
 
 export const LinkWrapper = styled.div`
   height: 155px;
-
-  width: 90%;
+  width: 100%;
   align-self: end;
   margin-left: 2rem;
 
@@ -73,10 +72,13 @@ export const LinkWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    gap: 5px;
 
     h1 {
       color: ${({ theme }) => theme.colors.text5};
       font-size: ${({ theme }) => theme.fontSize.xs};
+      overflow: hidden;
+      max-height: 47%;
     }
 
     p {
@@ -84,7 +86,7 @@ export const LinkWrapper = styled.div`
       font-size: ${({ theme }) => theme.fontSize.xxs};
       overflow: hidden;
       text-overflow: ellipsis;
-      max-height: 37%;
+      max-height: 34%;
     }
 
     h3 {
@@ -103,5 +105,28 @@ export const LinkWrapper = styled.div`
     object-position: right top;
     border-radius: 0 ${({ theme }) => theme.borderRadius.md}
       ${({ theme }) => theme.borderRadius.md} 0;
+  }
+`;
+
+export const BottomWrapper = styled.div`
+  display: flex;
+`;
+
+export const LikesWrapper = styled.div`
+  width: 10%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+
+  svg {
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: ${({ isLiked, theme }) => (isLiked ? theme.colors.likeButton : "white")};
+  }
+
+  h3 {
+    font-size: 0.8rem;
   }
 `;
