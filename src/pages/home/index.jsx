@@ -16,30 +16,28 @@ export default function HomePage() {
   const { userToken } = useContext(UserContext);
 
   useEffect(() => {
-    // if (!userToken) navigate.current("/");
-    if (!userToken) console.log("no token");
+    if (!userToken) navigate.current("/");
   }, [userToken]);
 
   return (
     <>
       <Header />
       {/* <FormWrapper> */}
-        <S.Body>
+      <S.Body>
         <S.ContentWrapper>
-        <S.PostsWrapper>
-          <Div>
-            <TimelineHeader>timeline</TimelineHeader>
-          </Div>
-          <PostForm />
-          <Posts />
+          <S.PostsWrapper>
+            <Div>
+              <TimelineHeader>timeline</TimelineHeader>
+            </Div>
+            <PostForm />
+            <Posts />
           </S.PostsWrapper>
           <S.TrendWrapper>
-          <Trending></Trending>
-        </S.TrendWrapper>
+            <Trending></Trending>
+          </S.TrendWrapper>
         </S.ContentWrapper>
-        </S.Body>
+      </S.Body>
       {/* </FormWrapper> */}
     </>
   );
 }
-
