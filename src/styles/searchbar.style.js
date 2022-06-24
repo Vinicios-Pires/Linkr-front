@@ -37,8 +37,7 @@ export const ResultsContainer = styled.div`
   width: 100%;
   padding: 30px 10px 10px 10px;
   top: calc(${({ theme }) => theme.spacing.headerHeight} - 50%);
-  border-radius: 0 0 ${({ theme }) => theme.borderRadius.md}
-    ${({ theme }) => theme.borderRadius.md};
+  border-radius: 0 0 ${({ theme }) => theme.borderRadius.md};
 
   display: flex;
   flex-direction: column;
@@ -70,6 +69,13 @@ export const UserResult = styled.div`
     width: 50px;
     height: 50px;
     border-radius: 50%;
+  }
+
+  :hover {
+    cursor: pointer;
+    background: gray;
+    color: white;
+    border-radius: 25px 50px;
   }
 `;
 
