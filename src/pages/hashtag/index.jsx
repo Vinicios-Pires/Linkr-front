@@ -1,15 +1,20 @@
 import { useContext, useEffect, useRef } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+
+import Header from "../../components/header.js";
+import PostsHash from "../../components/PostsUser/hashtag.posts.jsx";
+import * as S from "../../styles/global.style";
+import { Div, TimelineHeader } from "../home/style";
+import Trending from "../../components/trending.jsx";
+
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../contexts/user.context";
 
-import Header from "../../components/header.js";
-import PostsHashtag from "../../components/PostsUser/hashtag.posts.jsx";
-import Trending from "../../components/trending";
 
-import * as S from "../../styles/global.style";
-import { Div, TimelineHeader } from "./style";
+export default function Hashtag() {
+  const { hashtag } = useParams();
 
-export default function HomePage() {
   const navigate = useRef(useNavigate());
   const { userToken } = useContext(UserContext);
 
@@ -18,24 +23,32 @@ export default function HomePage() {
     // if(!userToken) console.log("no token");
   }, [userToken]);
 
+  // const [user, setUser] = useState();
+
+  // useEffect(() => {
+  //   const requisicao = axios.get(`${process.env.REACT_APP_API_URL}/hashtag/${hashtag}`);
+  //   requisicao.then((res) => {
+  //     setUser(res.data);
+  //     console.log(user)
+  //   });
+  // }, []);
+
   return (
     <>
       <Header />
-      {/* <FormWrapper> */}
       <S.Body>
         <S.ContentWrapper>
           <S.PostsWrapper>
             <Div>
-              <TimelineHeader>Hashtag</TimelineHeader>
+              <TimelineHeader>#{hashtag}</TimelineHeader>
             </Div>
-            <PostsHashtag />
+            <PostsHash />
           </S.PostsWrapper>
           <S.TrendWrapper>
           <Trending/>
         </S.TrendWrapper>
         </S.ContentWrapper>
       </S.Body>
-      {/* </FormWrapper> */}
     </>
   );
 }
