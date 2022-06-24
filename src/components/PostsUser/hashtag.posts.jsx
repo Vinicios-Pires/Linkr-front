@@ -5,14 +5,15 @@ import { useEffect, useState } from "react";
 import Post from "../Posts/Post";
 import { PostsWrapper } from "../Posts/styles";
 
-export default function Posts() {
-  const { id } = useParams();
+export default function PostsHashtag() {
+  const { hashtag } = useParams();
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  console.log(hashtag)
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/user/${id}`)
+      .get(`${process.env.REACT_APP_API_URL}/timeline/${hashtag}`)
       .then(({ data }) => setPosts(data))
       .catch(() =>
         window.alert(
@@ -27,17 +28,13 @@ export default function Posts() {
   return (
     <PostsWrapper>
       {posts.length > 0
-        ? posts.map((post) => (
+        ? posts.map((post, index) => (
             <Post
-              key={post.id}
+              key={index}
               pictureUrl={post.pictureUrl}
               username={post.username}
               description={post.description}
               linkData={post.linkData}
-              userHasLiked={post.userHasLiked}
-              likes={post.likes}
-              postId={post.id}
-              authorId={post.authorId}
             />
           ))
         : "There are no posts yet"}

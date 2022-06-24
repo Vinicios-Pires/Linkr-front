@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../contexts/user.context";
 
 import Header from "../../components/header.js";
-import Posts from "../../components/Posts/Posts";
+import PostsHashtag from "../../components/PostsUser/hashtag.posts.jsx";
 import Trending from "../../components/trending";
 
 import * as S from "../../styles/global.style";
@@ -28,7 +28,7 @@ export default function HomePage() {
             <Div>
               <TimelineHeader>Hashtag</TimelineHeader>
             </Div>
-            <Posts />
+            <PostsHashtag />
           </S.PostsWrapper>
           <S.TrendWrapper>
           <Trending/>
