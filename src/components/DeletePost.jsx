@@ -45,9 +45,12 @@ export default function DeletePost({ postId, closeModal }) {
           Authorization: `Bearer ${userToken}`,
         },
       })
-      .catch(console.dir)
-      .finally(() => {
+      .then(() => {
         window.location.reload();
+      })
+      .catch(() => {
+        closeModal();
+        window.alert("Algo deu errado. Não foi possivel excluir o post");
       });
   };
 
