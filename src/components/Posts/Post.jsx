@@ -2,7 +2,8 @@ import { PostHeader, PostWrapper, LikesWrapper, BottomWrapper } from "./styles";
 import Link from "./Link";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import axios from "axios";
-import { useContext, useState } from "react";
+import { useContext, useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../contexts/user.context";
 import ReactTooltip from "react-tooltip";
 
@@ -14,7 +15,9 @@ export default function Post({
   userHasLiked,
   likes,
   postId,
+  authorId,
 }) {
+  const navigate = useRef(useNavigate());
   const { userToken, userInfo } = useContext(UserContext);
 
   const [isLiked, setIsLiked] = useState(userHasLiked);
@@ -45,12 +48,16 @@ export default function Post({
   if (likedBy.length > 2)
     likesMessage = likesMessage + `and other ${likes.length - 1} people`;
 
+  const getUserProfile = () => {
+    navigate.current(`/user/${authorId}`);
+  };
+
   return (
     <PostWrapper>
       <PostHeader>
-        <img src={pictureUrl} alt="avatar" />
+        <img onClick={getUserProfile} src={pictureUrl} alt="avatar" />
         <div>
-          <h1>{username}</h1>
+          <h1 onClick={getUserProfile}>{username}</h1>
           <h3>{description}</h3>
         </div>
       </PostHeader>

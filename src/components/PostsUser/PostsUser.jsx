@@ -27,13 +27,17 @@ export default function Posts() {
   return (
     <PostsWrapper>
       {posts.length > 0
-        ? posts.map((post, index) => (
+        ? posts.map((post) => (
             <Post
-              key={index}
+              key={post.id}
               pictureUrl={post.pictureUrl}
               username={post.username}
               description={post.description}
               linkData={post.linkData}
+              userHasLiked={post.userHasLiked}
+              likes={post.likes}
+              postId={post.id}
+              authorId={post.authorId}
             />
           ))
         : "There are no posts yet"}
