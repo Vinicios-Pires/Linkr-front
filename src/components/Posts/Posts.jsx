@@ -44,6 +44,7 @@ export default function Posts() {
               userHasLiked={post.userHasLiked}
               likes={post.likes}
               postId={post.id}
+              authorId={post.authorId}
             />
           ))
         : "There are no posts yet"}

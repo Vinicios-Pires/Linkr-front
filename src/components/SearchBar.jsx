@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   SearchBarWrapper,
   Input,
@@ -10,6 +11,8 @@ import {
 } from "../styles/searchbar.style";
 
 export default function SearchBar() {
+  const navigate = useRef(useNavigate());
+
   const [inputText, setInputText] = useState("");
   const [usersData, setUsersData] = useState([]);
 
@@ -52,6 +55,10 @@ export default function SearchBar() {
     };
   }, [areResultsDisplayed]);
 
+  const getUserProfile = (user) => {
+    navigate.current(`/user/${user}`);
+  };
+
   return (
     <SearchBarWrapper ref={ref}>
       <HideTransitionBlock />
@@ -65,9 +72,9 @@ export default function SearchBar() {
       {areResultsDisplayed && (
         <ResultsContainer>
           {usersData.map((user, index) => (
-            <UserResult key={user.username + index}>
+            <UserResult key={index}>
               <img src={user.pictureUrl} alt="avatar" />
-              <h5>{user.username}</h5>
+              <h5 onClick={() => getUserProfile(user.id)}>{user.username}</h5>
             </UserResult>
           ))}
         </ResultsContainer>
