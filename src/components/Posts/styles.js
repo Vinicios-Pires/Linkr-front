@@ -10,6 +10,21 @@ export const PostsWrapper = styled.section`
   position: relative;
 `;
 
+export const TextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  h1 {
+    color: ${({ theme }) => theme.colors.secondary};
+    font-size: ${({ theme }) => theme.fontSize.sm};
+  }
+
+  h3 {
+    font-size: ${({ theme }) => theme.fontSize.xs};
+  }
+`;
+
 export const PostWrapper = styled.article`
   background: ${({ theme }) => theme.colors.postBackground};
   color: ${({ theme }) => theme.colors.text4};
@@ -27,6 +42,7 @@ export const PostWrapper = styled.article`
 `;
 
 export const PostHeader = styled.div`
+  width: 100%;
   display: flex;
   gap: 1rem;
   align-self: start;
@@ -35,21 +51,6 @@ export const PostHeader = styled.div`
     width: 60px;
     height: 60px;
     border-radius: 50%;
-  }
-
-  div {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-    h1 {
-      color: ${({ theme }) => theme.colors.secondary};
-      font-size: ${({ theme }) => theme.fontSize.sm};
-    }
-
-    h3 {
-      font-size: ${({ theme }) => theme.fontSize.xs};
-    }
   }
 `;
 
@@ -130,3 +131,35 @@ export const LikesWrapper = styled.div`
     font-size: 0.8rem;
   }
 `;
+
+export const ButtonsWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: 10px;
+  gap: 8px;
+
+  svg {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+`;
+
+export const ModalStyle = {
+  content: {
+    background: "#333",
+    borderRadius: "50px",
+    height: "262px",
+    width: "550px",
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "space-around",
+  },
+};
