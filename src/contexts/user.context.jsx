@@ -32,11 +32,11 @@ export function UserProvider({ children }) {
   }, []);
 
   const logUserIn = (userInfo) => {
-    const { token, username, email, pictureUrl } = userInfo;
+    const { token, id, username, email, pictureUrl } = userInfo;
     localStorage.setItem("token", JSON.stringify(token));
-    localStorage.setItem("userInfo", JSON.stringify({ username, email, pictureUrl }));
+    localStorage.setItem("userInfo", JSON.stringify({ id, username, email, pictureUrl }));
     setUserToken(token);
-    setUserInfo({ username, email, pictureUrl });
+    setUserInfo({ id, username, email, pictureUrl });
   };
 
   const logUserOut = () => {
