@@ -147,6 +147,7 @@ display: flex;
   justify-content: start;
   gap: 0.5rem;
   margin: 185px 0px auto -15px;
+  z-index: 5;
 
   flex-grow: 0;
   flex-shrink: 0;
