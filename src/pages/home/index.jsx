@@ -17,29 +17,27 @@ export default function HomePage() {
 
   useEffect(() => {
     if (!userToken) navigate.current("/");
-    // if (!userToken) console.log("no token");
   }, [userToken]);
 
   return (
     <>
       <Header />
       {/* <FormWrapper> */}
-        <S.Body>
+      <S.Body>
         <S.ContentWrapper>
-        <S.PostsWrapper>
-          <Div>
-            <TimelineHeader>timeline</TimelineHeader>
-          </Div>
-          <PostForm />
-          <Posts />
+          <S.PostsWrapper>
+            <Div>
+              <TimelineHeader>timeline</TimelineHeader>
+            </Div>
+            <PostForm />
+            <Posts />
           </S.PostsWrapper>
           <S.TrendWrapper>
           <Trending/>
         </S.TrendWrapper>
         </S.ContentWrapper>
-        </S.Body>
+      </S.Body>
       {/* </FormWrapper> */}
     </>
   );
 }
-
