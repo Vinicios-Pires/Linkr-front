@@ -31,7 +31,7 @@ export default function PostsHash() {
         ),
       )
       .finally(() => setIsLoading(false));
-  }, []);
+  }, [hashtag]);
 
   if (isLoading) return <PostsWrapper>Loading...</PostsWrapper>;
 
