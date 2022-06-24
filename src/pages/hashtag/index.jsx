@@ -3,11 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../contexts/user.context";
 
 import Header from "../../components/header.js";
-import PostForm from "../../components/PostForm/PostForm";
 import Posts from "../../components/Posts/Posts";
 import Trending from "../../components/trending";
 
-// import { FormWrapper } from "../../styles/form.style";
 import * as S from "../../styles/global.style";
 import { Div, TimelineHeader } from "./style";
 
@@ -28,9 +26,8 @@ export default function HomePage() {
         <S.ContentWrapper>
           <S.PostsWrapper>
             <Div>
-              <TimelineHeader>timeline</TimelineHeader>
+              <TimelineHeader>Hashtag</TimelineHeader>
             </Div>
-            <PostForm />
             <Posts />
           </S.PostsWrapper>
           <S.TrendWrapper>

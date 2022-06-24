@@ -1,23 +1,16 @@
 import axios from "axios";
 import { createContext, useState } from "react";
 
-import authorizationHeader from "../utils/authorizationHeader";
-import getUserData from "../utils/getUserData";
+import authorizationHeader from "../utils/auth.header.jsx";
+import getUserData from "../utils/get.user.data.jsx";
 
 export const TrendingContext = createContext();
 
 export const TrendingProvider = ({ children }) => {
     const [trending, setTrending] = useState([]);
     const [hashtagPosts, setHashtagPosts] = useState([]);
+    
     const authHeader = authorizationHeader(getUserData()?.token);
-
-    const { userToken, userInfo } = useContext(UserContext);
-
-    const config = {
-        headers: {
-          Authorization: `Bearer ${userToken}`,
-        },
-      };
 
     const getTrending = () => {
         axios

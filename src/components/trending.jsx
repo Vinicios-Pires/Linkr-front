@@ -1,35 +1,41 @@
-import { useContext, useEffect } from "react";
+import React, { useState } from "react"
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import * as S from "../styles/global.style";
 
-import { TrendingContext } from "../contexts/trending.context.jsx";
-import { UserContext } from "../contexts/user.context.jsx";
-
 export default function Trending() {
-  const { trending, getTrending } = useContext(TrendingContext);
-  const { userToken } = useContext(UserContext);
-  const navigate = useNavigate();
+  const URL = `${process.env.REACT_APP_API_URL}/trending`
 
-  useEffect(() => {
-    if (!userToken) navigate.current("/");
-    else getTrending();
-  }, [userToken]);
+  const [hashtags, setHashtags] = useState(() => {
+    getHashtags()
+  })
 
+  const navigate = useNavigate()
+
+  function getHashtags() {
+    axios
+      .get(URL)
+      .then((response) => {
+        setHashtags([...response.data])
+      })
+      .catch((error) => {
+        console.log("🚀 ~ error", error)
+      })
+  }
 
   return (
     <S.TrendingBox>
       <S.Title>trending</S.Title>
 
-      {trending.map(({ id, name }) => (
-        <S.Trends
-          key={id}
-          onClick=
-          {async () => {
-            navigate(`/hashtag/${name}`);
-          }}
-          > # {name}
-        </S.Trends>
-      ))}
+      {hashtags &&
+        hashtags.map((hashtag, i) => (
+          <S.Trends
+            key={i}
+            onClick={() => navigate(`/hashtag/${hashtag.name}`)}
+          >
+            # {hashtag.name}
+          </S.Trends>
+        ))}
 
     </S.TrendingBox>
   );
