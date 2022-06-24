@@ -52,6 +52,13 @@ export const PostHeader = styled.div`
     height: 60px;
     border-radius: 50%;
   }
+
+  :hover {
+    img,
+    h1 {
+      cursor: pointer;
+    }
+  }
 `;
 
 export const LinkWrapper = styled.div`

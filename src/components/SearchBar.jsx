@@ -11,7 +11,7 @@ import {
 } from "../styles/searchbar.style";
 
 export default function SearchBar() {
-  const navigate = useRef(useNavigate());
+  const navigate = useNavigate();
 
   const [inputText, setInputText] = useState("");
   const [usersData, setUsersData] = useState([]);
@@ -56,7 +56,8 @@ export default function SearchBar() {
   }, [areResultsDisplayed]);
 
   const getUserProfile = (user) => {
-    navigate.current(`/user/${user}`);
+    navigate(`/user/${user}`);
+    window.location.reload(true);
   };
 
   return (
@@ -73,7 +74,11 @@ export default function SearchBar() {
         <ResultsContainer>
           {usersData.map((user, index) => (
             <UserResult key={index}>
-              <img src={user.pictureUrl} alt="avatar" />
+              <img
+                onClick={() => getUserProfile(user.id)}
+                src={user.pictureUrl}
+                alt="avatar"
+              />
               <h5 onClick={() => getUserProfile(user.id)}>{user.username}</h5>
             </UserResult>
           ))}
