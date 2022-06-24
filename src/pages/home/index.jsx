@@ -29,9 +29,12 @@ export default function HomePage() {
           <S.PostsWrapper>
             <Div>
               <TimelineHeader>timeline</TimelineHeader>
-            </Div>
+              </Div>
+            <S.FormWrapp>
             <PostForm />
+            </S.FormWrapp>
             <Posts />
+
           </S.PostsWrapper>
           <S.TrendWrapper>
           <Trending/>

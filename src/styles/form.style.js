@@ -14,6 +14,10 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 16px;
 margin-left: 10px;
 
+@media (max-width: 925px) {
+  width: clamp(350px, 100%, 100vw);
+  margin-left: 0px;
+  }
 
   img {
     width: 50px;
@@ -47,6 +51,7 @@ position: relative;
 export const FormBanner = styled.section`
   display: flex;
   flex-direction: column;
+
 
   color: ${({ theme }) => theme.colors.secondary};
   background: ${({ theme }) => theme.colors.main};
@@ -109,8 +114,17 @@ export const Form = styled.form`
     heigth: 100vh;
   }
 
+  @media (max-width: 925px) {
+  width: clamp(350px, 100%, 100vw);
+  }
+
   input {
     width: clamp(350px, 100%, 503px);
+
+    @media (max-width: 925px) {
+  width: clamp(350px, 90%, 90vw);
+  margin-left: -10vw;
+  }
 
     :first-child{
       height: 30px;
@@ -136,10 +150,11 @@ export const Form = styled.form`
     }
   }
 
-  @media (max-width: 600px){
+  @media (max-width: 925px) {
     button{
-    margin-right: 30px;
-    }
+  width: clamp(350px, 100%, 100vw);
+  margin-left: -50px;
+  }
   }
 
   button {

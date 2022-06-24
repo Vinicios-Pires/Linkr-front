@@ -1,7 +1,15 @@
 import styled from "styled-components";
 
+export const FormWrapp = styled.div`
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-right: -100px;
+  `;
+
 export const Body = styled.main`
-  /* display: flex; */
+
   width: 100%;
   margin: 0 auto;
   min-height: calc(100vh - ${({ theme }) => theme.spacing.headerHeight});
