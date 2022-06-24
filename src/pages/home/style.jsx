@@ -5,11 +5,15 @@ export const Div = styled.div`
   justify-content: start;
   gap: 0.5rem;
   margin: 78px auto 43px auto;
-  width: clamp(400px, 100%, 470px);
+  width: clamp(400px, 100%, 600px);
+
 
   @media (max-width: ${({ theme }) => theme.breakPoints.laptop}) {
     heigth: 100vh;
   }
+
+
+
 `;
 
 export const TimelineHeader = styled.h1`

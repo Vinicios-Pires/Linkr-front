@@ -8,6 +8,8 @@ export const PostsWrapper = styled.section`
   margin-top: 1rem;
   max-height: 60vh;
   position: relative;
+
+
 `;
 
 export const TextWrapper = styled.div`
