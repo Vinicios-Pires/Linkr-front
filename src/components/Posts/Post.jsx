@@ -1,11 +1,23 @@
-import { PostHeader, PostWrapper, LikesWrapper, BottomWrapper } from "./styles";
+import {
+  PostHeader,
+  PostWrapper,
+  LikesWrapper,
+  BottomWrapper,
+  ButtonsWrapper,
+  TextWrapper,
+  ModalStyle,
+} from "./styles";
 import Link from "./Link";
-import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { AiOutlineHeart, AiFillHeart, AiFillDelete, AiOutlineEdit } from "react-icons/ai";
 import axios from "axios";
 import { useContext, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../contexts/user.context";
 import ReactTooltip from "react-tooltip";
+import Modal from "react-modal";
+import DeletePost from "../DeletePost";
+
+Modal.setAppElement("#root");
 
 export default function Post({
   pictureUrl,
@@ -22,6 +34,11 @@ export default function Post({
 
   const [isLiked, setIsLiked] = useState(userHasLiked);
   const [numberOfLikes, setNumberOfLikes] = useState(likes.length);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const goToUserProfile = () => {
+    navigate.current(`/user/${authorId}`);
+  };
 
   const handleLike = () => {
     const likeAction = userHasLiked ? "dislike" : "like";
@@ -39,27 +56,38 @@ export default function Post({
       .catch(console.dir);
   };
 
-  const likedBy = likes.filter((username) => username !== userInfo.username);
-  if (isLiked) likedBy.unshift("Você");
+  const formatLikesMessage = () => {
+    const likedBy = likes.filter((username) => username !== userInfo.username);
+    if (isLiked) likedBy.unshift("Você");
 
-  let likesMessage = "";
-  if (likedBy.length > 0) likesMessage = likedBy[0].toString();
-  if (likedBy.length > 1) likesMessage = likesMessage + `, ${likedBy[1]}`;
-  if (likedBy.length > 2)
-    likesMessage = likesMessage + `and other ${likes.length - 1} people`;
+    let likesMessage = "";
+    if (likedBy.length > 0) likesMessage = likedBy[0].toString();
+    if (likedBy.length > 1) likesMessage = likesMessage + `, ${likedBy[1]}`;
+    if (likedBy.length > 2)
+      likesMessage = likesMessage + `and other ${likes.length - 1} people`;
 
-  const getUserProfile = () => {
-    navigate.current(`/user/${authorId}`);
+    return likesMessage;
   };
+
+  const currentUserIsAuthor = authorId === userInfo.id;
 
   return (
     <PostWrapper>
       <PostHeader>
-        <img onClick={getUserProfile} src={pictureUrl} alt="avatar" />
-        <div>
-          <h1 onClick={getUserProfile}>{username}</h1>
+        <img onClick={goToUserProfile} src={pictureUrl} alt="avatar" />
+        <TextWrapper>
+          <h1 onClick={goToUserProfile}>{username}</h1>
           <h3>{description}</h3>
-        </div>
+        </TextWrapper>
+        {currentUserIsAuthor && (
+          <ButtonsWrapper>
+            <AiOutlineEdit />
+            <AiFillDelete onClick={() => setModalIsOpen(true)} />
+          </ButtonsWrapper>
+        )}
+        <Modal isOpen={modalIsOpen} style={ModalStyle} contentLabel="Modal">
+          <DeletePost postId={postId} closeModal={() => setModalIsOpen(false)} />
+        </Modal>
       </PostHeader>
       <BottomWrapper>
         <LikesWrapper isLiked={isLiked}>
@@ -68,7 +96,7 @@ export default function Post({
           ) : (
             <AiOutlineHeart onClick={handleLike} />
           )}
-          <h3 data-tip={likesMessage}>{numberOfLikes} Likes</h3>
+          <h3 data-tip={formatLikesMessage()}>{numberOfLikes} Likes</h3>
           <ReactTooltip place="bottom" type="light" effect="solid" />
         </LikesWrapper>
         <Link linkData={linkData} />
