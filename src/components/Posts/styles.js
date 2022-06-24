@@ -14,6 +14,7 @@ export const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
 
   h1 {
     color: ${({ theme }) => theme.colors.secondary};
@@ -170,3 +171,9 @@ export const ModalStyle = {
     justifyContent: "space-around",
   },
 };
+
+export const EditInput = styled.textarea`
+  resize: none;
+  border-radius: ${({ theme }) => theme.borderRadius.sm};
+  padding: 5px;
+`;

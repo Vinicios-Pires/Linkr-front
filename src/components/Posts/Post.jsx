@@ -6,6 +6,7 @@ import {
   ButtonsWrapper,
   TextWrapper,
   ModalStyle,
+  EditInput,
 } from "./styles";
 import Link from "./Link";
 import { AiOutlineHeart, AiFillHeart, AiFillDelete, AiOutlineEdit } from "react-icons/ai";
@@ -29,15 +30,43 @@ export default function Post({
   postId,
   authorId,
 }) {
-  const navigate = useRef(useNavigate());
   const { userToken, userInfo } = useContext(UserContext);
+
+  const navigate = useRef(useNavigate());
+  const goToUserProfile = () => navigate.current(`/user/${authorId}`);
 
   const [isLiked, setIsLiked] = useState(userHasLiked);
   const [numberOfLikes, setNumberOfLikes] = useState(likes.length);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  const goToUserProfile = () => {
-    navigate.current(`/user/${authorId}`);
+  const [isEditing, setIsEditing] = useState(false);
+  const [descriptionEdit, setDescriptionEdit] = useState(description);
+
+  const handleEditInput = (e) => setDescriptionEdit(e.target.value);
+
+  const submitDescriptionUpdate = () => {
+    const data = { description: descriptionEdit };
+    const config = {
+      headers: {
+        Authorization: `Bearer ${userToken}`,
+      },
+    };
+    axios
+      .put(`${process.env.REACT_APP_API_URL}/posts/${postId}`, data, config)
+      .then(() => {
+        setIsEditing(false);
+      })
+      .catch(() => {
+        window.alert("Nao foi possivel salvar as alteracoes");
+      });
+  };
+
+  const handleEditKeyPress = (e) => {
+    if (e.key === "Escape") setIsEditing(false);
+    if (e.key === "Enter") {
+      e.preventDefault();
+      submitDescriptionUpdate();
+    }
   };
 
   const handleLike = () => {
@@ -77,11 +106,20 @@ export default function Post({
         <img onClick={goToUserProfile} src={pictureUrl} alt="avatar" />
         <TextWrapper>
           <h1 onClick={goToUserProfile}>{username}</h1>
-          <h3>{description}</h3>
+          {isEditing ? (
+            <EditInput
+              value={descriptionEdit}
+              autoFocus
+              onKeyDown={handleEditKeyPress}
+              onChange={handleEditInput}
+            />
+          ) : (
+            <h3>{descriptionEdit}</h3>
+          )}
         </TextWrapper>
         {currentUserIsAuthor && (
           <ButtonsWrapper>
-            <AiOutlineEdit />
+            <AiOutlineEdit onClick={() => setIsEditing(!isEditing)} />
             <AiFillDelete onClick={() => setModalIsOpen(true)} />
           </ButtonsWrapper>
         )}
