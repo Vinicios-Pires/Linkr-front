@@ -1,25 +1,36 @@
-// import { useRef } from "react";
-// import { useNavigate } from "react-router-dom";
-import * as S from "../styles/global.style"
+import { useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import * as S from "../styles/global.style";
 
-export default function Trending () {
+import { TrendingContext } from "../contexts/trending.context.jsx";
+import { UserContext } from "../contexts/user.context.jsx";
 
-    // const navigate = useRef(useNavigate());
+export default function Trending() {
+  const { trending, getTrending } = useContext(TrendingContext);
+  const { userToken } = useContext(UserContext);
+  const navigate = useNavigate();
 
-    return (
-        <S.TrendingBox>
-        <S.Title>trending</S.Title>
+  useEffect(() => {
+    if (!userToken) navigate.current("/");
+    else getTrending();
+  }, [userToken]);
 
-            {/* <S.Trends onClick={() => navigate()}> */}
-            <S.Trends># Hashtag</S.Trends>
-            <S.Trends># Hashtag</S.Trends>
-            <S.Trends># Hashtag</S.Trends>
-            <S.Trends># Hashtag</S.Trends>
-            <S.Trends># Hashtag</S.Trends>
 
-          {/* <S.ErrorLoadTrendsMessage>
-            <p>There are no hashtags yet.</p>
-          </S.ErrorLoadTrendsMessage> */}
-      </S.TrendingBox>
-    )
+  return (
+    <S.TrendingBox>
+      <S.Title>trending</S.Title>
+
+      {trending.map(({ id, name }) => (
+        <S.Trends
+          key={id}
+          onClick=
+          {async () => {
+            navigate(`/hashtag/${name}`);
+          }}
+          > # {name}
+        </S.Trends>
+      ))}
+
+    </S.TrendingBox>
+  );
 }

@@ -16,8 +16,8 @@ export default function HomePage() {
   const { userToken } = useContext(UserContext);
 
   useEffect(() => {
-    // if (!userToken) navigate.current("/");
-    if (!userToken) console.log("no token");
+    if (!userToken) navigate.current("/");
+    // if (!userToken) console.log("no token");
   }, [userToken]);
 
   return (
@@ -34,7 +34,7 @@ export default function HomePage() {
           <Posts />
           </S.PostsWrapper>
           <S.TrendWrapper>
-          <Trending></Trending>
+          <Trending/>
         </S.TrendWrapper>
         </S.ContentWrapper>
         </S.Body>
