@@ -27,10 +27,7 @@ export default function Hashtag() {
 
   // useEffect(() => {
   //   const requisicao = axios.get(`${process.env.REACT_APP_API_URL}/hashtag/${hashtag}`);
-  //   requisicao.then((res) => {
-  //     setUser(res.data);
-  //     console.log(user)
-  //   });
+  //   requisicao.then((res) => console.log(res));
   // }, []);
 
   return (

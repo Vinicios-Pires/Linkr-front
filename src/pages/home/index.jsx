@@ -17,13 +17,11 @@ export default function HomePage() {
 
   useEffect(() => {
     if (!userToken) navigate.current("/");
-    // if(!userToken) console.log("no token");
   }, [userToken]);
 
   return (
     <>
       <Header />
-      {/* <FormWrapper> */}
       <S.Body>
         <S.ContentWrapper>
           <S.PostsWrapper>
@@ -38,7 +36,6 @@ export default function HomePage() {
         </S.TrendWrapper>
         </S.ContentWrapper>
       </S.Body>
-      {/* </FormWrapper> */}
     </>
   );
 }
