@@ -1,25 +1,42 @@
-// import { useRef } from "react";
-// import { useNavigate } from "react-router-dom";
-import * as S from "../styles/global.style"
+import React, { useState } from "react"
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import * as S from "../styles/global.style";
 
-export default function Trending () {
+export default function Trending() {
+  const URL = `${process.env.REACT_APP_API_URL}/trending`
 
-    // const navigate = useRef(useNavigate());
+  const [hashtags, setHashtags] = useState(() => {
+    getHashtags()
+  })
 
-    return (
-        <S.TrendingBox>
-        <S.Title>trending</S.Title>
+  const navigate = useNavigate()
 
-            {/* <S.Trends onClick={() => navigate()}> */}
-            <S.Trends># Hashtag</S.Trends>
-            <S.Trends># Hashtag</S.Trends>
-            <S.Trends># Hashtag</S.Trends>
-            <S.Trends># Hashtag</S.Trends>
-            <S.Trends># Hashtag</S.Trends>
+  function getHashtags() {
+    axios
+      .get(URL)
+      .then((response) => {
+        setHashtags([...response.data])
+      })
+      .catch((error) => {
+        console.log("🚀 ~ error", error)
+      })
+  }
 
-          {/* <S.ErrorLoadTrendsMessage>
-            <p>There are no hashtags yet.</p>
-          </S.ErrorLoadTrendsMessage> */}
-      </S.TrendingBox>
-    )
+  return (
+    <S.TrendingBox>
+      <S.Title>trending</S.Title>
+
+      {hashtags &&
+        hashtags.map((hashtag, i) => (
+          <S.Trends
+            key={i}
+            onClick={() => navigate(`/hashtag/${hashtag.name}`)}
+          >
+            # {hashtag.name}
+          </S.Trends>
+        ))}
+
+    </S.TrendingBox>
+  );
 }

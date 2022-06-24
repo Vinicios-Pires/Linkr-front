@@ -143,7 +143,7 @@ display: flex;
   flex-grow: 0;
   flex-shrink: 0;
   width: 301px;
-  @media (max-width: ${({ theme }) => theme.breakPoints.laptop}) {
+  @media (max-width: 925px) {
     display: none;
   }
 `;
